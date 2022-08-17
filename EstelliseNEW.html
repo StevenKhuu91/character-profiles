@@ -1,0 +1,489 @@
+<style>
+    
+    body, a:hover { cursor: url(https://i.imgur.com/L7U2Jil.png), progress !important; }
+    body { background-color: #f3f3e0; }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb:vertical { border: 2px solid #b7a4e7; background-color: #75638d; height: auto; }
+
+/*---MODIFIERS---*/
+
+    u { text-decoration: none; color: #4f4f4f; font-size: 40px; }
+    b { color: #1e2f8d; font-size: 19px; font-family: 'Courier New', monospace; }
+    i { color: #000000; font-size: 15px; text-align: center; letter-spacing: -1px; }
+    a { text-decoration: none; color:#8d7af8; } a:hover { text-decoration: none; }
+    p { text-indent: 20px; }
+    h1 { letter-spacing: 2px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: italic; font-variant: small-caps; font-size: 15px; color: #ffffff; text-align: center; margin-top: -2px; margin-bottom: 0px; }
+
+/*---TOOLTIPS---*/
+
+    a.tooltipTOP { outline: none; }
+
+    a.tooltipTOP:hover { text-decoration: none; }
+
+    a.tooltipTOP span {
+        position: fixed; margin: auto; top: 0px; bottom: 800px; left: 0px; right: 0px;
+        display: none;
+        z-index: 9;
+        width: 350px;
+        height: 150px;
+        text-align: center;
+        font-family: calibri;
+        font-size: 15px;
+        font-variant: small-caps;
+        color: #2c2c2c;
+        background-color: #fdf4f8;
+        border: 5px double #b6c8ed;;
+        border-radius: 10px;
+        padding: 5px;
+        overflow: hidden;
+    }
+
+    a.tooltipTOP:hover span {
+        display: inline;
+    }
+
+    a.tooltipMID { outline: none; }
+
+    a.tooltipMID:hover { text-decoration: none; }
+
+    a.tooltipMID span {
+        position: fixed; margin: auto; top: 0px; bottom: 15px; left: 8px; right: 0px;
+        display: none;
+        z-index: 99;
+        width: 385px;
+        height: 175px;
+        text-align: center;
+        font-family: calibri;
+        font-size: 15px;
+        font-variant: small-caps;
+        color: #2c2c2c;
+        background-color: #fdf4f8;
+        border: 5px double #b6c8ed;;
+        border-radius: 10px;
+        padding: 5px;
+        opacity: 0.9;
+        overflow: hidden;
+    }
+
+    a.tooltipMID:hover span {
+            display: inline;
+    }
+
+/*---BOXES---*/
+
+    #frameBox {
+        position: fixed; margin: auto; top: 0px; bottom: 0px; left: 0px; right: 0px;
+        width: 438px;
+        height: 700px;
+        border: 6px double #ebe080de;
+        border-radius: 15px;
+        background-image: url("https://i.imgur.com/uipycHN.png"); 
+        
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-variant: small-caps;
+        font-size: 17px;
+        color: #2c2c2c;
+        z-index: 1;
+    }
+
+    .boxStyling {
+        float: left;
+        background-color: #fdf4f8;
+        border: 2px solid #b6c8ed;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: calibri;
+        color: #2c2c2c;
+        font-size: 15px;
+        font-variant: small-caps;
+        overflow: auto;
+        }
+
+    .shift {
+        position: fixed; margin: auto; top: 10px; bottom: 0px; left: 5px; right: 0px;
+        width: 380px;
+        height: 620px;
+        opacity: 0;
+        z-index: -1;
+
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+    }
+
+    .shift:target {
+        opacity: 1;
+        z-index: 999;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+    }
+
+    #businessCard {
+        position: fixed; margin: auto; top: 680px; bottom: 0px; left: 0px; right: 630px;
+        transform: rotate(25deg);
+        width: 225px;
+        height: 115px;
+        border: 1px solid rgb(44, 44, 44);
+        background-color: #ede0e0;
+        z-index: 2;
+    }
+
+/*--------------------------------------------------------------------------------------------*/
+
+    #landingPage {
+        position: fixed; margin: auto; top: 0px; bottom: 0px; left: 0px; right: 0px;
+        width: 375px;
+        height: 650px;
+    }
+
+    #landingBox {
+        width: 365px;
+        height: 180px;
+        opacity: 0.8;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #middleBox {
+        width: 365px;
+        height: 107px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        opacity: 0.8;
+    }
+
+/*--------------------------------------------------------------------------------------------*/
+
+    #shiftBoxTOP {
+        width: 368px;
+        height: 190px;
+        margin-bottom: 190px;
+    }
+
+    #shiftBoxBOT {
+        width: 368px;
+        height: 190px;
+    }
+
+/*--------------------------------------------------------------------------------------------*/
+
+    #recipeBox {
+        position: fixed; margin: auto; top: 100px; bottom: 0px; left: 490px; right: 0px;
+        width: 30px;
+        height: 600px;
+        z-index: 9;
+    }
+
+/*---IMAGES---*/
+
+    #starryGIF {
+        width: 360px;
+        height: 16px;
+        background-image: url("https://i.imgur.com/n64heO0.gif");
+        float: left;
+        border: 1px dashed black;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    #fullRender {
+        width: 341px;
+        height: 550px;
+        position: fixed; margin: auto; top: 105px; bottom: 0px; left: 0px; right: 600px;
+        background-image: url("https://i.imgur.com/lMO9hkP.png");
+        opacity: 1;
+        z-index: -1;
+    }
+
+    #starrySkyCARD {
+        width: 125px;
+        height: 89px;
+        margin-top: 10px;
+        background-image: url("https://i.imgur.com/MGKFuQ2.png");
+    }
+
+    #strawberryCake {
+        width: 150px;
+        height: 159px;
+        position: fixed; margin: auto; top: 0px; bottom: 780px; left: 400px; right: 0px;
+        background-image: url("https://i.imgur.com/sFeIRUy.png");
+        z-index: -1;
+        transform: rotate(25deg);
+    }
+
+    #starryMuffin {
+        width: 100px;
+        height: 129px;
+        position: fixed; margin: auto; top: 0px; bottom: 650px; left: 490px; right: 0px;
+        background-image: url("https://i.imgur.com/uTXwJvH.png");
+        z-index: 99;
+        transform: rotate(-10deg);
+    }
+
+    #starButton {
+        width: 30px;
+        height: 29px;
+        background-image: url("https://i.imgur.com/360qlAj.png");
+        transform: rotate(25deg);
+    }
+
+    #moonButton {
+        width: 30px;
+        height: 30px;
+        background-image: url("https://i.imgur.com/FJJ2xK5.png");
+        transform: rotate(25deg);
+    }
+
+/*---BUTTONS---*/
+
+    #numberButtons {
+        position: fixed; margin: auto; top: 755px; bottom: 0px; left: 0px; right: 0px;
+        width: 150px;
+        height: 30px;
+    }
+
+    #numberButtons a {
+        float: left;
+        display: block;
+        width: 50px;
+        height: 30px;
+        background-color: transparent;
+    }
+
+</style>
+
+<body oncontextmenu="return false"></body>
+
+<div id="businessCard" class="insideBoxes">
+    <center><div id="starrySkyCARD"></div></center>
+</div>
+
+<div id="strawberryCake"></div>
+<div id="starryMuffin"></div>
+
+<div id="numberButtons">
+    <center>
+    <a href="#uno" class="tooltipTOP"><div id="starButton"></div><span><br><br><b>History & Current Events!</b></span></a>
+    <a href="#dos" class="tooltipTOP"><div id="starButton"></div><span><br><br><b>Belongings & Friends!</b></span></a>
+    <a href="#tres" class="tooltipTOP"><div id="moonButton"></div><span><br><br><b>Reset!</b></span></a>
+    </center>
+</div>
+
+<div id="recipeBox">
+    <a class="tooltipMID"><img src="https://i.imgur.com/t2q7F3b.png" style="float:left;"><span>
+        <b> Bread! </b><br>
+        Bread is a staple among many cultures in various forms, and any baker worth their salt is capable of making specific kinds of bread for different purposes. Estellise is well-versed in crafting various types ranging from croissants, ciabatta, and even challah.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/mWqEt2G.png" style="float:left;"><span>
+        <b> Caramel Flan! </b><br>
+        A personal favorite of Estellise. While simple and easy to make, it's hard to master and perfect. It isn't a pastry per say, but was her first sweet dish that she made for her parents to try. It has a special nostalgia that's dear to her heart.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/CsSeqgq.png" style="float:left;"><span>
+        <b> Chocolate Cake Log with Vanilla Creme! </b><br>
+        One of the first things Estellise was assigned to make during her beginning years as a pastry chef. Simple in appearance, a cake log requires plenty of planning ahead and preparation to put together properly. Now, this dish is a mastered recipe in the young chef's repertoire.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/NMQiDSk.png" style="float:left;"><span>
+        <b> Gift Cake! </b><br>
+        Gift Cakes are a specialty of Estellise at the Starry Sky Bakery. These come in various flavors and colors, but their signature look is cube-shaped with a fondant ribbon over it. Given their versatile purpose for any special occassion, these remain one of the best sellers at the bakery.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/2H2h8ps.png" style="float:left;"><span>
+        <b> Meat Pie Bun! </b><br>
+        Meat pie buns are an excellent way to use leftover ground beef, as they require little preparation and can be made quickly. Estellise is often seen eating one of these, with a new curry sauce she's been concocting as of late. Suffice to say, it makes for an easy but delicious savory lunch.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/2RrCXiK.png" style="float:left;"><span>
+        <b> Taiyaki! </b><br>
+        A traditional Japanese pastry made with a crisp waffle-like outside in the shape of a fish and filled with sweet red beans. Another popular choice at Starry Sky, Estellise delights in figuring out what sort of new fillings she can come up with for seasonal flavors. Sometimes she'll even use different shapes.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/1FGfYIx.png" style="float:left;"><span>
+        <b> Fruit Jelly! </b><br>
+        A random creation utilizing the leftover fruits that didn't make it into her pastries. These were originally a test run at first, served with a side of homemade whipped cream. Customers however loved them, especially when they were chilled during the Summer. They're now a Spring & Summer seasonal item on the bakery's menu.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/6FN75xq.png" style="float:left;"><span>
+        <b> Macaron! </b><br>
+        A notoriously difficult French pastry to make properly. Estellise has spent hours attempting to perfect her craft with this, and has had excellent results as of late. Given the multitude of combinations of flavors with both the meringue and filling, these remain a staple side item at Starry Sky.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/RIEHdtL.png" style="float:left;"><span>
+        <b> Fengli Su! </b><br>
+        Otherwise known more commonly as 'Pineapple Cakes'. These originated in China, but are found all over the Asia now as a popular treat. Crumbly shortcrust pastry surrounds pineapple jam filling, which pairs extremely well with unsweetened tea! These go on sale during Summer, when the imported pineapples are at their sweetest.
+    </span></a><br><br>
+
+    <a class="tooltipMID"><img src="https://i.imgur.com/k7KhDqh.png" style="float:left;"><span>
+        <b> Special Strawberry SUPREME! </b><br>
+        A ridiculous food challenge exclusive to Starry Sky. Estellise LOVES to go over the top when making this. This beast of a parfait starts with strawberry jam between two slices of cake, a hefty middle section of frozen fruit custard, and topped with strawberry ice cream, whipped cream, a chunk of white chocolate, & strawberry pocky with even MORE strawberry jam drizzled over everything.
+    </span></a><br><br>
+</div>
+
+<div id="frameBox">
+
+    <div id="landingPage">
+        <div id="fullRender"></div>
+        <div id="landingBox" class="boxStyling">
+
+            <div id="starryGIF"><h1> My thoughts are stars... </h1></div>
+
+            <span> estellise bouvidier </span> 
+            <font style="float:right;"> female </font><br>
+
+            <span> twenty-one years old </span> 
+            <font style="float:right;"> september 18th </font><br>
+
+            <span> Estelle, Stella, Estie [Iced Tea(?)] </span> 
+            <font style="float:right;"> <a class="tooltipTOP">'jewel of starry sky'
+                <span>Admiring fans and patrons came up with this title for Estellise during the bakery's rise to popularity. She refutes claim over this repeatedly, but no one seems to take her seriously about it.</span>
+            </a></span></font><br>
+
+            <span> <a class="tooltipTOP">pansexual <span> Masculine/Male Leaning <br> Very inexperienced with Feminine/Female Individuals </span></a></span> </span> 
+            <font style="float:right;"> single </font><br>
+
+            <span> 98 lbs. </span> 
+            <font style="float:right;"> 5'0" ft. </font><br>
+
+            <span> pastry Sous Chef </span> 
+            <font style="float:right;"> <a class="tooltipTOP">starry sky bakery
+                <span>Estellise's first & current full-time job. The head chef/manager is a close family friend, and helped keep her head above the water when times were particularly rough on the girl.</span>
+            </a></span></font><br>
+
+            <span> fasionista, foodie </span> 
+            <font style="float:right;"> soft-spoken, quiet </font><br>
+
+            <span> <a target=_"blank" href="https://youtu.be/UjLnvXpkq68"> perfect Blue 🎶</a> </span> 
+            <font style="float:right;"> <a class="tooltipTOP" target=_blank" href="https://www.f-list.net/c/estelliselewd">F-List *
+                <span>This isn't a complete/exhaustive list of things I'm into, and many of the more detailed kinks I have to be in the mood for. Basically, this is forever a work in progress.~</span>
+            </a></span></font><br>
+
+        </div>
+
+        <div id="middleBox" class="boxStyling">
+            <center>
+
+            <a target='_blank' href="https://i.imgur.com/fJM7zju.jpg"><img src="https://i.imgur.com/a4qbrls.png" height="100px"></a>
+        
+            <a target='_blank' href="https://i.imgur.com/giARdk8.jpg"><img src="https://i.imgur.com/Qn5A625.png" height="100px"></a>
+        
+            <a target='_blank' href="https://i.imgur.com/h1n5FyQ.jpg"><img src="https://i.imgur.com/4Lt9yfY.png" height="100px"></a>
+        
+            <a target='_blank' href="https://i.imgur.com/hplCCll.jpg"><img src="https://i.imgur.com/OiNNbRx.png" height="100px"></a>
+        
+            <a target='_blank' href="https://i.imgur.com/HoQhcNO.jpg"><img src="https://i.imgur.com/WtDWNAY.png" height="100px"></a>
+
+            <a target='_blank' href="https://i.imgur.com/Y9nyXNI.jpg"><img src="https://i.imgur.com/eJ3kSqy.png" height="100px"></a>
+        
+            </center>
+        </div>
+
+        <div id="landingBox" class="boxStyling">
+            <div id="starryGIF"><h1> ...I cannot fathom into constellations. </h1></div>
+
+            <span style="color:#306cec;"> 01. </span> 
+            <font style="float:right;"> dm friendly, but please skip the 'hi how are you's. </font><br>
+
+            <span style="color:#306cec;"> 02. </span> 
+            <font style="float:right;"> ic ≠ ooc; i'm not my estellise. </font><br>
+
+            <span style="color:#306cec;"> 03. </span> 
+            <font style="float:right;"> <a class="tooltipTOP">cozy & comfy lt-focused character. * 
+                <span>Darker themes are possible, but within reason! Please discuss any ideas you have with me first before trying to roll with something.</span>
+            </a></span></font><br>
+
+            <span style="color:#306cec;"> 04. </span> 
+            <font style="float:right;"> don't be fuckin' weird/creepy/etc. </font><br>
+
+            <span style="color:#306cec;"> 05. </span> 
+            <font style="float:right;"> cst time zone; erratic schedule. </font><br>
+
+            <span style="color:#306cec;"> 06. </span> 
+            <font style="float:right;"> modern +/- fantasy settings. </font><br>
+
+            <span style="color:#306cec;"> 07. </span> 
+            <font style="float:right;"> smut is reserved. </font><br>
+
+            <span style="color:#306cec;"> 08. </span> 
+            <font style="float:right;"> no outside contact </font><br>
+
+        </div>
+
+
+
+        <div id="uno" class="shift">
+            <div id="shiftBoxTOP" class="boxStyling">
+
+            <div id="starryGIF"><h1>⋆ History! ⋆</h1></div>
+            <p> Born into a loving family, Estellise was given humble beginnings, though she learned to make the most out of everything she had. Being the only child, one might have believed the expectations of her parents to be heavy on her shoulders, yet a glimpse into her life would prove otherwise; Estellise was raised to pursue her own goals and dreams, with her parents only wishing for her to be happy in life. Unfortunately, things would change drastically when a drunk driver turned the girl's world upside-down, as she'd receive news one night of her parents caught up in a fatal accident. </p>
+            <p> For some few years Estellise grieved, unsure of how to go about her life with such sudden circumstances hoisted upon her out of nowhere. In the end, she was able to lift herself back up thanks to both friends and extended family, the memory of her parents living on in her heart as she tries to live the life they wanted for her. </p>
+    
+            </div>
+            
+            <div id="shiftBoxBOT" class="boxStyling">
+
+            <div id="starryGIF"><h1>⋆ Current Events! ⋆</h1></div>
+
+            <p> With her occupation focused in that of Culinary Arts, Estellise works under the tutelage of a family friend who manages the 'Starry Sky Bakery', honing her expertise in baked goods and pastries as best as she can. Given the popularity of the bakery, her days are often long and difficult, but ultimately gratifying when she's able to fulfill their customers' requests. </p>
+
+            </div>
+        </div>
+
+        <div id="dos" class="shift">
+            <div id="shiftboxTOP" class="boxStyling">
+            <div id="starryGIF"><h1>⋆ Belongings! ⋆</h1></div>
+
+            <a class="tooltipTOP"><img src="https://i.imgur.com/N6BeTXX.png" height="100px"><span>
+                <b> Worn Bag! </b><br>
+                Holds everything but a house!... Kinda. Estellise is often seen wearing this on her forays around the city, and it provides a great deal of sentimental value to her as it was a birthday gift before she went off to college. The outside has a unique worn and stressed exterior that gives it personality. It can act as a handbag or backpack too!
+            </span></a>
+
+            <a class="tooltipTOP"><img src="https://i.imgur.com/ADLS33e.png" height="100px"><span>
+                <b> Smartphone! </b><br>
+                A trusty and reliable companion. Estellise is almost never without it. The phone is an older model, but the battery life is still great and it takes amazing photos for her social media whether it be food or clothes. It's clearly cared for and has no visible signs of cracks or scratches on it whatsoever.
+            </span></a>
+
+            <a class="tooltipTOP"><img src="https://i.imgur.com/WIppZXE.png" height="100px"><span>
+                <b> Handy Notebook! </b><br>
+                This leatherbound book contains multitudes of little notes and recipes Estellise has thought of through the years. A glance inside shows near perfect handwriting coupled with a slew of post-it notes here and there. It's cluttered, but still very much readable and organized. There's even a ribbon bookmark attached to it! 
+            </span></a>
+
+            <a class="tooltipTOP"><img src="https://i.imgur.com/9vCG90s.png" height="100px"><span>
+                <b> Worn Leather Wallet! </b><br>
+                Estellise's first wallet since she was 16. It's not of the greatest quality, but it still does the job and she tries her best to clean and maintain it. The cheap leather however is starting to fall apart at the seams, so she'll need a new one soon...
+            </span></a>
+
+            </div>
+
+            <div id="shiftboxBOT" class="boxStyling">
+            <div id="starryGIF"><h1>⋆ Friends! ⋆</h1></div>
+            <center>
+
+                <a target='_blank' href="URL"><img src="URL" height="100px"></a>
+    
+                <a target='_blank' href="URL"><img src="URL" height="100px"></a>
+    
+                <a target='_blank' href="URL"><img src="URL" height="100px"></a>
+    
+                <a target='_blank' href="URL"><img src="URL" height="100px"></a>
+    
+                <a target='_blank' href="URL"><img src="URL" height="100px"></a>
+    
+                <a target='_blank' href="URL"><img src="URL" height="100px"></a>
+    
+            </center>
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+

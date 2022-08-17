@@ -1,0 +1,377 @@
+<style>
+
+   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+   body, a:hover {cursor: url(https://i.imgur.com/88c59sF.png), progress !important; background-color: #e3c773; }
+
+   #click {position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px;}
+
+   ::-webkit-scrollbar { width: 4px; }
+   ::-webkit-scrollbar-track { width: 1px; }
+   ::-webkit-scrollbar-thumb:vertical { border: 1px solid #8d82a8; background-color: #d3954c; height: auto; }
+
+/*---MODIFIERS---*/
+
+   u { text-decoration: none; color: #4f4f4f; font-size: 40px; }
+   b { color: #1d4f4f; font-size: 38px; font-family: 'Courier New', monospace; background-color: #ffffff; }
+   i { color: #d3954c; font-size: 15px; }
+   p { text-indent: 25px; margin-top: 0px; }
+   a { text-decoration: none; color:#d3954c; } a:hover { text-decoration: none; }
+   h1 { font-weight: normal; font-family: century gothic, sans-serif; font-variant: small-caps; font-size: 19px; letter-spacing: 1px; color: #e99f46; text-align: center; margin-bottom: 0px; padding-bottom: 10px; }
+
+   a.tooltip {outline: none;}
+
+   a.tooltip:hover { text-decoration: none;}
+
+   a.tooltip span {
+position: fixed; margin: auto; top: 0px; bottom: 0px; left: 0px; right: 650px;
+display: none;
+z-index: 99;
+width: 250px;
+height: 500px;
+text-align: justified;
+font-family: calibri;
+font-size: 15px;
+color: white;
+background-color: #000000;
+border: 5px double #ffffc7;;
+border-radius: 10px;
+padding: 10px;
+overflow: hidden;
+opacity: 0.9;
+}
+
+   a.tooltip:hover span {
+display: inline;
+}
+
+
+/*---PICTURES---*/
+
+   #nearlRENDER {
+background-image: url("https://i.imgur.com/pew8afr.png");
+width: 260px; height: 500px;
+position: fixed; margin: auto; top: 0px; bottom: 0px; left: 0px; right: 650px;
+box-shadow: -3px 3px 10px 5px #fff3b0;
+border: 10px solid #ffffc7;
+border-radius: 100px 0px 100px 0px;
+transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+}
+
+   #nearlRENDER:hover {
+background-image: url("https://i.imgur.com/BnIfTe7.png");
+transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+}
+
+   .banner { width: 450px; height: 190px; border: 5px solid #e3c773; float: left; margin-top: 15px; margin-bottom: 15px; }
+
+
+   #nearlINTRO { background-image: url("https://media1.giphy.com/media/aDX3XtAcjvQsPSC3Yh/giphy.gif?cid=790b761169fc137733b8f1f38e76247d1e4c8d0d723cbc8c&rid=giphy.gif&ct=g"); }
+   #nearlSTORY { background-image: url("https://media4.giphy.com/media/ZGdRkURWZynD5fBcLQ/giphy.gif?cid=790b7611d87b6ace03bf3ed20125c0249ea635ef69bd78c3&rid=giphy.gif&ct=g"); }
+   #nearlFRIENDS { background-image: url("https://media2.giphy.com/media/vaMDc9F5JUR132tSSZ/giphy.gif?cid=790b761174e40d6304b541e3fe446a7cba041de886d83e46&rid=giphy.gif&ct=g"); }
+   #nearlOOC { background-image: url("https://i.imgur.com/b2b3MAK.png"); }
+
+   
+   #gallery { }
+
+   #gallery a {
+float: left;
+margin-left: 20px;
+margin-right: 20px;
+transform: rotate(45deg);
+display: block;
+width: 25px; height: 25px; border: 4px double #e3c773;
+background-color: #ffffff;
+transition: all 0.7s ease-in-out;
+-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+-ms-transition: all 0.7s ease-in-out;
+}
+
+   #gallery a:hover {
+background-color: #000000;
+transition: all 0.7s ease-in-out;
+-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+-ms-transition: all 0.7s ease-in-out;
+}
+
+
+/*---BOXES---*/
+
+   #mainCONTAINER {
+width: 500px; height: 470px;
+padding: 15px;
+position: fixed; margin: auto; top: 0px; bottom: 0px; left: 200px; right: 0px;
+font-family: candara;
+font-size: 14px;
+line-height: 17px;
+border: 10px solid #ffffed;
+text-align: justified;
+box-shadow: 8px -8px 20px 2px #8a8a8a;
+background-image: url("https://i.imgur.com/XOL6gZ5.png");
+background-repeat: repeat; 
+}
+
+   #textBOX {
+width: 460px; height: 430px;
+padding: 20px;
+float: left;
+background-color: #ededeb;
+overflow: auto;
+}
+
+   #headCANONS {
+width: 430px; height: 170px;
+padding: 10px;
+color: #ffffff;
+background-color: #000000;
+opacity: 0;
+transition: all 0.4s ease-in-out;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+}
+
+   #headCANONS:hover {
+opacity: 0.8;
+transition: all 0.4s ease-in-out;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+}
+
+
+   #galleryBAR {
+width: 376px; height: 40px;
+position: fixed; margin: auto; top: 520px; bottom: 0px; left: 220px; right: 0px;
+z-index: 99;
+}
+
+   #name {
+width: 200px; height: 100px;
+text-shadow: #000000 -2px 6px, #000000 0px 2px, #000000 0px 2px, #000000 0px -1px;
+margin: auto; position: fixed; left: 0px; right: 380px; top: 75px; bottom: 0px;
+font-family: 'Great Vibes', cursive;
+font-size: 100px;
+letter-spacing: 3px;
+word-spacing: 5px;
+color: #e3c773;
+z-index: 99;
+transform: rotate(-90deg);
+opacity: 0.6;
+}
+
+   .friendBOX {
+width: 90px; height: 90px;
+border: 1px dotted #e99f46;
+float: left;
+margin-right: 11px;
+margin-left: 11px;
+margin-bottom: 11px;
+transition: all 0.4s ease-in-out;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
+-ms-transition: all 0.4s ease-in-out;
+}
+
+
+</style>
+
+
+<div id="click" oncontextmenu="return false;">
+
+<div id="galleryBAR">
+<div id="gallery">
+<a href="https://i.imgur.com/baHH9b3.jpg" target="_blank"></a>
+<a href="https://i.imgur.com/vLHIoFj.jpg" target="_blank"></a>
+<a href="https://i.imgur.com/FPYb3V4.jpg" target="_blank"></a>
+<a href="https://i.imgur.com/vntDTOp.jpg" target="_blank"></a>
+<a href="https://i.imgur.com/0GUZro7.jpg" target="_blank"></a>
+</div>
+</div>
+
+<div id="nearlRENDER"></div>
+<div id="name">Nearl</div>
+
+<div id="mainCONTAINER">
+
+<div id="textBOX">
+<div class="banner" id="nearlINTRO">
+<div id="headCANONS">
+<h1> -- Personality Headcanons -- </h1>
+<i>☼</i> Steadfast, loyal, and empathetic of those she's allied with. Can however seem stern or hard to approach for those that don't know her. <br>
+<i>☼</i> Typical knightly demeanor and habits, though has learned to lighten up significantly in recent days. <br>
+<i>☼</i> Has obvious tells that express her mood when socializing. (i.e.: Glowing tail indicates she's content or happy.) <br>
+</div></div>
+<h1> -- Dossier -- </h1>
+<span>◆ Name ━</span> 
+<text style="float:right;">
+<span>Margaret Nearl ◆</span></text><br>
+
+<span>◆ Birthday ━</span> 
+<text style="float:right;">
+<span>April 23rd ◆</span></text><br>
+
+<span>◆ Moniker ━</span> 
+<text style="float:right;">
+<span>The Radiant Knight ◆</span></text><br>
+
+<span>◆ Home Country ━</span> 
+<text style="float:right;">
+<span>Kazimierz ◆</span></text><br>
+
+<span>◆ Affiliation ━</span> 
+<text style="float:right;">
+<span><a href="https://arknights.fandom.com/wiki/Rhodes_Island" target="_blank">Rhodes Island</a> ◆</span></text><br>
+
+<span>◆ Race ━</span> 
+<text style="float:right;">
+<span>Kuranta (Equine/Horse) ◆</span></text><br>
+
+<span>◆ Height ━</span> 
+<text style="float:right;">
+<span>171 cm. ◆</span></text><br>
+
+<span>◆ Family ━</span> 
+<text style="float:right;"><span>
+<a class="tooltip">Blemishine
+<span><br><br><br><img src="https://i.imgur.com/E2he2SU.png"><br><br>
+<center>Maria 'Blemishine' Nearl <br> Younger Sister </center>
+</span></a>, 
+<a class="tooltip">Whislash 
+<span><br><br><br><img src="https://i.imgur.com/UPsEneE.png"><br><br>
+<center>Zofia 'Whislash' Nearl <br> Aunt </center>
+</span></a>
+◆</span></text><br>
+
+<span>◆ Combat Experience ━</span> 
+<text style="float:right;">
+<span>5+ Years ◆</span></text><br>
+
+<span>◆ Gender ━</span> 
+<text style="float:right;">
+<span>Female ◆</span></text><br>
+
+<span>◆ Orientation ━</span> 
+<text style="float:right;"><span>
+<a class="tooltip">Gynosexual *
+<span><img src="https://i.imgur.com/Xvvvu69.png"><br><br>
+<center> Gynosexual: describes someone who's attracted to femininity. That means a person of any gender can be attracted to someone who identifies as female or who expresses feminine characteristics.</center><br>
+<p> Given Nearl's upbringing around feminine figures in her life, she leans more towards them than masculine entities. This is moreso just out of comfort, rather than a disdain or dislike. The possibility of anything beyond friendship with masculine figures is possible, but only for the right one.</p>
+</span></a> ◆</span></text><br>
+
+<span>◆ Status ━</span> 
+<text style="float:right;">
+<span>Single ◆</span></text><br>
+
+<span>◆ Voice Samples ━</span> 
+<text style="float:right;">
+<span><a target="_blank" href="https://youtu.be/5bmu7VBPlTQ" target="_blank">[X]</a> ◆</span></text><br>
+
+<span>◆ Theme ━</span> 
+<text style="float:right;">
+<span><a target="_blank" href="https://youtu.be/Bw1G51v2ACI" target="_blank">Radiant</a> ◆</span></text><br><br>
+
+<div class="banner" id="nearlSTORY">
+<div id="headCANONS">
+<h1> -- Prefential Headcanons -- </h1>
+<i>☼</i> In an effort to find her own passion like her sister (Maria/Blemishine) did, Margaret has developed an interest in culinary arts. <br>
+<i>☼</i> Due to having grown up around mostly women her entire life, Margaret finds her attraction leaning towards feminine figures. She isn't opposed to men, but rather simply doesn't know how to interact with them well in civilian settings. <br>
+</div></div>
+<h1> -- Story -- </h1>
+<p> A former Knight of Kazimierz, Margaret once held an illustrious position and title in her homeland, regarded often as the Radiant Knight due to how her light-based arts was utilized. An incident with the many bureaucrats and wealthy nobles there however spiraled her down to the rocky path of defamation, as she was an outspoken proponent who rallied against the state of Kazimierz today. Rumors turned into truth, and sure enough Margaret was outed to be an Infected, one of the multitudes of shunned who contracted Oripathy. Exiled from her homeland, Margaret came across coincidental but fateful allies in the form of Shining and Nightingale, two Sarkaz women who joined with the Radiant Knight to form 'The Followers'. As a vigilante band who did whatever they could to combat the injustices against the Infected, they earned the deserved attention of a certain pharmaceutical company by the name of Rhodes Island, and the rest was history. </p>
+
+<div class="banner" id="nearlFRIENDS">
+<div id="headCANONS">
+<h1> -- Combat Headcanons -- </h1>
+<i>☼</i> Capable of materializing her previously wielded armaments through the use of her arts. <br>
+<i>☼</i> Extremely adept at wielding all manner of weaponry, with utilizing her own arts alongside said weapons. <br>
+<i>☼</i> Has near superhuman strength, with agility and speed typical for any Kuranta. <br>
+</div></div>
+<h1> -- Allies & Friends -- </h1>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+<div class="friendBOX">
+<a class="tooltip"><span><img src="https://i.imgur.com/CvAb1pm.png"></span>
+<img src="https://i.imgur.com/r66rqYG.png"></a>
+</div>
+
+
+<div class="banner" id="nearlOOC">
+<div id="headCANONS">
+<h1> -- Misc. Headcanons -- </h1>
+<i>☼</i> Has been suffering from 'Impostor Syndrome' recently; Margaret's Oripathy Infection was only a rumor to get her exiled from Kazimierz to begin with. Knowing that she fights for the plight of the Infected, she feels as if she can't understand their true pain. <br>
+<i>☼</i> ...
+</div></div>
+<h1> -- Out Of Character -- </h1>
+<i>01.</i> Nearl is a character from Arknights. I play her according to canon events in the game, along with my own headcanons that would make sense for her. <br>
+<i>02.</i> Crossover friendly! Big focus on character interaction. <br>
+<i>03.</i> While I'm not opposed to smut, I lean towards the slow-burn approach. <br>
+<i>04.</i> Posts range from shitposty to novella when the muse strikes. <br>
+<i>05.</i> Margaret is a horse. Not a fox, not a cat. A horse. <br>
+<i>06.</i> This is Nearl as she is during & after the 'Near Light' event. <br>
+<i>07.</i> Profile code belongs to me. Commissions are iffy. Inquire within. <br>
+<br>
+
+</div>
+
+
+</div>
