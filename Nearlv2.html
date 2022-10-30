@@ -1,0 +1,132 @@
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap'); /* General Font */
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'); /* Header Font */
+
+    body, a:hover { cursor: url(https://i.imgur.com/KA6w1wT.png), progress !important; }
+    body { background-color: #f9eec2d7; }
+
+/*---GENERAL PROFILE RULES---*/
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb:vertical { border: 2px solid #b7a4e7; background-color: #75638d; height: auto; }
+
+p { text-indent: 25px; }
+h1 { font-family: 'Ubuntu', sans-serif; font-size: 18px; text-align: right; font-weight: normal; margin-bottom: 5px; margin-top: 0px; }
+
+.bg {
+    position: fixed; margin: auto;
+    top: 0; left: 0; right: 0; bottom: 0;
+    height: 100%; width: 100%;
+    background:
+        -webkit-linear-gradient(348deg,#ffe168 0%, hsla(95.09, 55.96%, 53.06%, 0) 65%),
+        -webkit-linear-gradient(315deg, #ffd29f 0%, hsla(135.36, 92.27%, 48.65%, 0) 70%),
+        -webkit-linear-gradient(65deg, #fffdee 10%, hsla(184.74, 29.23%, 25.49%, 0) 80%),
+        -webkit-linear-gradient(135deg, #d6e6e0 15%, hsla(65.74, 85.5%, 63.1%, 0) 80%);
+    background:
+        linear-gradient(40deg, #d6e6e0 0%, hsla(184.74, 29.23%, 25.49%, 0) 65%),
+        linear-gradient(102deg, #fffdee 0%, hsla(95.09, 55.96%, 53.06%, 0) 65%),
+        linear-gradient(135deg, #ffd29f 0%, hsla(135.36, 92.27%, 48.65%, 0) 70%),
+        linear-gradient(315deg, #ffe168 15%, hsla(65.74, 85.5%, 63.1%, 0) 80%);
+    animation-name: fadein;
+    animation-duration: 3.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: 1;
+    visibility: visible;
+    transition: .6s linear;
+    }
+
+@keyframes fadein {
+    0% { opacity: 1; }
+    100% { opacity: .3; }
+}
+
+@keyframes fadeout {
+    0% { opacity: 1; }
+    100% { opacity: .3; }
+}
+
+.bg-texture {
+    height: 100%; width: 100%;
+    background-image: url('https://i.imgur.com/Dvwszmh.png');
+    background-repeat: repeat;
+    opacity: 1;
+}
+
+/*---IMAGES---*/
+
+.verticalBanner {
+    background-image: url("https://i.imgur.com/C5Pf5up.png");
+    width: 318px; height: 650px;
+    box-shadow: -3px 3px 10px 3px #fff3b0;
+    border-radius: 5px;
+    position: fixed; margin: auto; top: 0px; bottom: 0px; left: 0px; right: 350px;
+    transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+}
+
+.verticalBanner:hover {
+    background-image: url("https://i.imgur.com/dxq2FH6.png");
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+}
+
+/*---MAIN PAGE---*/
+
+.boxStyle {
+    font-family: 'Raleway', sans-serif;
+    box-shadow: -3px 3px 10px 3px #fff3b0;
+    overflow: auto;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+#topBox {
+    width: 298px;
+    height: 455px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px double #fdd69b;
+    background-color: #fffdee;
+    position: fixed; margin: auto; top: 0px; bottom: 160px; left: 350px; right: 0px;
+}
+
+#botBox {
+    width: 298px;
+    height: 130px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px double #fdd69b;
+    background-color: #fffdee;
+    position: fixed; margin: auto; top: 495px; bottom: 0px; left: 350px; right: 0px;
+}
+
+
+
+
+
+</style>
+
+<body oncontextmenu="return false"></body>
+
+<div class="bg"><div class="bg-texture"></div></div>
+
+<div class="verticalBanner"></div>
+
+<div id="topBox" class="boxStyle">
+<h1> Nearl, The Radiant Knight </h1>
+<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus, quos aspernatur! Totam facere, beatae, dolores quaerat id qui aliquam nam alias, accusantium culpa molestias. Deleniti assumenda ad ipsa quas praesentium! </p>
+</div>
+
+<div id="botBox" class="boxStyle">
+
+</div>

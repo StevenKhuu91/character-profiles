@@ -1,0 +1,537 @@
+<style>
+body {
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+	background-color: #000;
+	background-image: url("[Background URL Here]");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	font-family: Times, serif;
+}
+
+p {
+	margin: 5px 0px;
+	overflow-wrap: break-word;
+}
+h1, h2, h3 {
+	text-align: center;
+	margin: 5px;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+.metal {
+	position: relative;
+	background: linear-gradient(45deg, #666, #BBB);
+}
+
+.holoBorder, .smallHoloBorder {
+	border: 1px solid #0FF;
+	border-image-source: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20version%3D%221.1%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22linearGradientHorizontal%22%20x1%3D%220%22%20x2%3D%220%22%20y1%3D%220%22%20y2%3D%221%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230FF0%22%3E%3C%2Fstop%3E%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%230FFA%22%3E%3C%2Fstop%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230FF0%22%3E%3C%2Fstop%3E%20%3C%2FlinearGradient%3E%20%3ClinearGradient%20id%3D%22linearGradientVertical%22%3E%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230FF0%22%3E%3C%2Fstop%3E%20%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%230FFA%22%3E%3C%2Fstop%3E%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230FF0%22%3E%3C%2Fstop%3E%20%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Cg%3E%20%3Cpath%20style%3D%22fill%3A%20url(%26quot%3B%23linearGradientHorizontal%26quot%3B)%3B%22%20d%3D%22M%200%2C0%20120%2C0%20119%2C1%201%2C1%20M%203%2C3%20117%2C3%20115%2C5%205%2C5%20M%207%2C7%20113%2C7%20111%2C9%209%2C9%20M%2011%2C11%20109%2C11%20107%2C13%2013%2C13%20M%2015%2C15%20105%2C15%20103%2C17%2017%2C17%20M%2019%2C19%20101%2C19%2099%2C21%2021%2C21%20M%2023%2C23%2097%2C23%2095%2C25%2025%2C25%20M%2027%2C27%2093%2C27%2091%2C29%2029%2C29%20M%2031%2C31%2089%2C31%2087%2C33%2033%2C33%20M%2035%2C35%2085%2C35%2083%2C37%2037%2C37%20M%2039%2C39%2081%2C39%2080%2C40%2040%2C40%22%20%2F%3E%20%3Cpath%20style%3D%22fill%3A%20url(%26quot%3B%23linearGradientHorizontal%26quot%3B)%3B%22%20d%3D%22M%2040%2C80%2080%2C80%2081%2C81%2039%2C81%20M%2037%2C83%2083%2C83%2085%2C85%2035%2C85%20M%2033%2C87%2087%2C87%2089%2C89%2031%2C89%20M%2029%2C91%2091%2C91%2093%2C93%2027%2C93%20M%2025%2C95%2095%2C95%2097%2C97%2023%2C97%20M%2021%2C99%2099%2C99%20101%2C101%2019%2C101%20M%2017%2C103%20103%2C103%20105%2C105%2015%2C105%20M%2013%2C107%20107%2C107%20109%2C109%2011%2C109%20M%209%2C111%20111%2C111%20113%2C113%207%2C113%20M%205%2C115%20115%2C115%20117%2C117%203%2C117%20M%201%2C119%20119%2C119%20120%2C120%200%2C120%22%2F%3E%20%3Cpath%20style%3D%22fill%3A%20url(%26quot%3B%23linearGradientVertical%26quot%3B)%3B%22%20d%3D%22M%20120%2C0%20119%2C1%20120%2C1%20M%20120%2C3%20117%2C3%20115%2C5%20120%2C5%20M%20120%2C7%20113%2C7%20111%2C9%20120%2C9%20M%20120%2C11%20109%2C11%20107%2C13%20120%2C13%20M%20120%2C15%20105%2C15%20103%2C17%20120%2C17%20M%20120%2C19%20101%2C19%2099%2C21%20120%2C21%20M%20120%2C23%2097%2C23%2095%2C25%20120%2C25%20M%20120%2C27%2093%2C27%2091%2C29%20120%2C29%20M%20120%2C31%2089%2C31%2087%2C33%20120%2C33%20M%20120%2C35%2085%2C35%2083%2C37%20120%2C37%20M%20120%2C39%2081%2C39%2080%2C40%2080%2C41%20120%2C41%20M%20120%2C43%2080%2C43%2080%2C45%20120%2C45%20M%20120%2C47%2080%2C47%2080%2C49%20120%2C49%20M%20120%2C51%2080%2C51%2080%2C53%20120%2C53%20M%20120%2C55%2080%2C55%2080%2C57%20120%2C57%20M%20120%2C59%2080%2C59%2080%2C61%20120%2C61%20M%20120%2C63%2080%2C63%2080%2C65%20120%2C65%20M%20120%2C67%2080%2C67%2080%2C69%20120%2C69%20M%20120%2C71%2080%2C71%2080%2C73%20120%2C73%20M%20120%2C75%2080%2C75%2080%2C77%20120%2C77%20M%20120%2C79%2080%2C79%2080%2C80%2081%2C81%20120%2C81%20M%20120%2C83%2083%2C83%2085%2C85%20120%2C85%20M%20120%2C87%2087%2C87%2089%2C89%20120%2C89%20M%20120%2C91%2091%2C91%2093%2C93%20120%2C93%20M%20120%2C95%2095%2C95%2097%2C97%20120%2C97%20M%20120%2C99%2099%2C99%20101%2C101%20120%2C101%20M%20120%2C103%20103%2C103%20105%2C105%20120%2C105%20M%20120%2C107%20107%2C107%20109%2C109%20120%2C109%20M%20120%2C111%20111%2C111%20113%2C113%20120%2C113%20M%20120%2C115%20115%2C115%20117%2C117%20120%2C117%20M%20120%2C119%20119%2C119%20120%2C120%22%2F%3E%20%3Cpath%20style%3D%22fill%3A%20url(%26quot%3B%23linearGradientVertical%26quot%3B)%3B%22%20d%3D%22M%200%2C0%201%2C1%200%2C1%20M%200%2C3%203%2C3%205%2C5%200%2C5%20M%200%2C7%207%2C7%209%2C9%200%2C9%20M%200%2C11%2011%2C11%2013%2C13%200%2C13%20M%200%2C15%2015%2C15%2017%2C17%200%2C17%20M%200%2C19%2019%2C19%2021%2C21%200%2C21%20M%200%2C23%2023%2C23%2025%2C25%200%2C25%20M%200%2C27%2027%2C27%2029%2C29%200%2C29%20M%200%2C31%2031%2C31%2033%2C33%200%2C33%20M%200%2C35%2035%2C35%2037%2C37%200%2C37%20M%200%2C39%2039%2C39%2040%2C40%2040%2C41%200%2C41%20M%200%2C43%2040%2C43%2040%2C45%200%2C45%20M%200%2C47%2040%2C47%2040%2C49%200%2C49%20M%200%2C51%2040%2C51%2040%2C53%200%2C53%20M%200%2C55%2040%2C55%2040%2C57%200%2C57%20M%200%2C59%2040%2C59%2040%2C61%200%2C61%20M%200%2C63%2040%2C63%2040%2C65%200%2C65%20M%200%2C67%2040%2C67%2040%2C69%200%2C69%20M%200%2C71%2040%2C71%2040%2C73%200%2C73%20M%200%2C75%2040%2C75%2040%2C77%200%2C77%20M%200%2C79%2040%2C79%2040%2C80%2039%2C81%200%2C81%20M%200%2C83%2037%2C83%2035%2C85%200%2C85%20M%200%2C87%2033%2C87%2031%2C89%200%2C89%20M%200%2C91%2029%2C91%2027%2C93%200%2C93%20M%200%2C95%2025%2C95%2023%2C97%200%2C97%20M%200%2C99%2021%2C99%2019%2C101%200%2C101%20M%200%2C103%2017%2C103%2015%2C105%200%2C105%20M%200%2C107%2013%2C107%2011%2C109%200%2C109%20M%200%2C111%209%2C111%207%2C113%200%2C113%20M%200%2C115%205%2C115%203%2C117%200%2C117%20M%200%2C119%201%2C119%200%2C120%22%2F%3E%20%3C%2Fg%3E%3C%2Fsvg%3E");
+	border-image-width: 30px;
+	border-image-outset: 15px;
+	border-image-repeat: round;
+	color: #033;
+	box-shadow: inset 0px 0px 15px #0FFA, 0px 0px 15px #0FFA;
+}
+.holoBorder {
+	border-image-slice: 160;
+}
+.smallHoloBorder {
+	border-image-slice: 20;
+}
+.holoBorder::before, .smallHoloBorder::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	background: #0CCE;
+	filter: blur(10px);
+	z-index: 1;
+}
+.holoBorder *, .smallHoloBorder * {
+	position: relative;
+	z-index: 2;
+}
+
+#profile {
+	height: 100%;
+	width: 100%;
+	min-width: 800px;
+	min-height: 500px;
+	margin: 0px auto;
+	position: relative;
+}
+
+#mainview, #colorFrame {
+	box-shadow: inset 0px 0px 20px #0CF;
+}
+
+#mainview {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 100px;
+	left: 0px;
+	overflow: hidden;
+}
+#mainview > div {
+	position: absolute;
+	top: 110px;
+	left: 100px;
+	bottom: 150px;
+	right: 100px;
+	border-radius: 5px;
+	padding: 5px;
+	border: 3px solid #700;
+	background: #CCC;
+	box-shadow: 0px 0px 5px #000;
+	opacity: 0;
+	transition: all 1s ease-in-out;
+	overflow: auto;
+	z-index: 1;
+}
+#mainview > div:target {
+	opacity: 1;
+	transition: all 1s ease-in-out 0s;
+	z-index: 2;
+}
+
+#menu {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 150px;
+	padding-top: 10px;
+	box-sizing: border-box;
+	filter: drop-shadow(0px 0px 10px #0CF);
+	border-top: 1px solid #000;
+	display: flex;
+	justify-content: stretch;
+}
+#menu::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	left: 3px;
+	height: 0px;
+	border-top: 5px dotted #0004;
+}
+#infoMiddle {
+	margin-top: -100px;
+	flex-shrink: 0;
+	flex-grow: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+#menuIcon {
+	position: relative;
+	display: block;
+	width: 180px;
+	height: 180px;
+	border-radius: 400px;
+	border: 0px solid #999;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px #000;
+	z-index: 3;
+	flex-shrink: 0;
+	flex-grow: 0;
+	background: #999;
+}
+#menuIcon > div {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	left: 10px;
+	bottom: 10px;
+	border-radius: 400px;
+	overflow: hidden;
+}
+#menuIcon::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	left: 2px;
+	bottom: 2px;
+	border-radius: 400px;
+	border: 6px dotted #0004;
+}
+#menuIconEffect {
+	margin: -2%;
+	width: 115%;
+	height: 110%;
+	background-image: url("https://i.imgur.com/6xx8Vlp.png"); 
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+}
+#menuIconEffect::before, #menuIconEffect::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	border-radius: 50%;
+}
+#menuIconEffect::before {
+	box-shadow: inset 0px 0px 30px #000, inset 0px 0px 20px #000, inset 0px 0px 10px #000;
+}
+#menuIconEffect::after {
+	background: #000;
+        background-image: url("https://i.imgur.com/qybgaAQ.png");
+	transition: all 1s ease-in-out;
+	opacity: 0;
+}
+#menuIcon:hover #menuIconEffect::after {
+	opacity: 0.6;
+}
+#infoRight > table {
+	float: left;
+}
+#infoLeft > table {
+	float: right;
+}
+
+th {
+	width: 120px;
+	font-size: 1.2em;
+}
+td {
+	width: 300px;
+}
+
+.quote {
+	font-size: 10px;
+	font-style: italic;
+}
+
+#topMenu {
+	position: absolute;
+	top: -70px;
+	left: 0px;
+	right: 0px;
+	display: flex;
+	justify-content: space-evenly;
+}
+#topMenu > a {
+	position: relative;
+	max-width: 18%;
+	display: block;
+	font-size: 20px;
+	padding: 5px;
+	text-align: center;
+	border-radius: 5px;
+	box-sizing: border-box;
+	flex-grow: 1;
+}
+#topMenu p {
+	margin: 0px;
+}
+#topMenu > span {
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: 180px;
+}
+
+#viewContainer {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	left: 30px;
+	bottom: 271px;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+#view {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 900px;
+	max-height: 500px;
+}
+#view > div {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	display: none;
+	overflow: hidden;
+	padding: 10px;
+}
+#view > div:target {
+	display: block;
+}
+#view > div > h1 {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	left: 10px;
+	margin: 5px;
+	padding: 0px;
+	border-bottom: 1px solid #033A;
+}
+.content {
+	position: absolute;
+	top: 50px;
+	right: 10px;
+	left: 10px;
+	bottom: 10px;
+	overflow: auto;
+	display: flex;
+}
+.content > div {
+	flex-basis: 0px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	overflow: auto;
+	padding: 0px 10px;
+	border-right: 1px solid #000;
+}
+.content > div:last-of-type {
+	border-right: 0px solid #000;
+}
+#colorFrame {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+}
+.content img {
+	max-height: 100%;
+	max-width: 100%;
+}
+.credits:hover {
+	filter: drop-shadow(0px 0px 10px #00F);
+}
+#middleCredits {
+	opacity: 0.6;
+	height: 30px;
+	width: 30px;
+	display: block;
+	margin-bottom: 10px;
+}
+#middleCredits:hover {
+	opacity: 1;
+}
+
+.datalogs {
+	display: flex;
+	flex-direction: column;
+}
+.entry {
+	flex-grow: 0;
+	flex-shrink: 0;
+	border-left: 1px solid #077;
+	margin-bottom: 20px;
+	padding-left: 5px;
+}
+.entry > h1 {
+	font-size: 1.2em;
+	text-align: left;
+	margin: 0px;
+}
+.entry > h2 {
+	font-size: 0.8em;
+	text-align: left;
+	font-weight: normal;
+	margin: 0px 0px 0px 20px;
+}
+</style>
+
+<div id="profile">
+	<div id="colorFrame"></div>
+	<div id="viewContainer">
+		<div id="view">
+			<!--
+				Each of these entries contains one of the pages for your profile Feel free to fill them with whatever you want.
+				A few things to note:
+					- When you put something in a page, put it in a <div> inside of the content-div. If you type your text directly into the content-div you'll get some... unwanted results.
+					- You can put different things in different divs, and they'll appear in their own columns.
+					- You can put a large number of divs on a page, but I recommend no more than four, after that each section gets a bit too thin to read properly. I'd recomment two or three for best experience.
+					- Need help? Contact the Warehouse.
+			-->
+			<div class="holoBorder" id="v00">
+				<h1>Biometrics</h1>
+				<div class="content">
+					<div>
+						<img src="https://dl.dropboxusercontent.com/s/6g1vlsm0x6v02mq/AvatarMask.svg?dl=0"/>
+						<p><i>Dr. Liara T'soni</i></p>
+					</div>
+					<div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra, metus interdum euismod commodo, felis dui fermentum quam, sit amet egestas magna neque vel quam. Ut eget felis enim. Nullam sagittis, lacus non ultrices egestas, lorem nisl fermentum urna, eget bibendum nulla justo at ex. Nulla ut purus eu neque tempus rhoncus. Nullam aliquet diam ac volutpat sodales. Donec sit amet imperdiet libero, in iaculis ex. Cras sed nunc vitae ante faucibus varius. Praesent vehicula massa odio, non tincidunt orci faucibus eget. Nam facilisis ligula quis erat aliquam, in finibus ligula ullamcorper. Nulla sollicitudin justo at mauris dignissim pellentesque. Aliquam erat volutpat. Vestibulum accumsan posuere rutrum. Mauris fringilla diam a sapien sollicitudin, vel elementum odio dictum. Duis mollis quam quis cursus fringilla. Quisque pharetra vestibulum lectus, a vulputate dui.</p>
+						<p>Phasellus nec sodales erat. Quisque urna felis, tempus nec tortor et, congue iaculis leo. Phasellus vel volutpat magna, non blandit massa. Curabitur nec odio sed mauris tincidunt mattis vitae ac mi. Pellentesque condimentum mauris lorem, sed consectetur urna tincidunt et. Aliquam tristique neque non tempor mollis. Donec fermentum finibus laoreet. Quisque sodales venenatis tincidunt.</p>
+						<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum luctus nisl in elit rutrum, vitae auctor felis mollis. Nulla gravida vel quam sed pellentesque. Maecenas molestie enim augue, eu condimentum arcu semper non. Donec et bibendum tortor. Morbi molestie ex lacus, sed molestie metus hendrerit posuere. Curabitur pulvinar, urna et scelerisque tristique, lorem diam vulputate diam, vitae dictum metus sem posuere lacus. Sed sollicitudin leo sit amet purus hendrerit ultrices. Aliquam vel laoreet massa, vel rutrum erat. Proin tempus efficitur lacinia. Suspendisse semper efficitur massa quis posuere. Donec fringilla sem mauris. Suspendisse nulla augue, bibendum in vehicula ut, euismod eget augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+					</div>
+					<div>
+						<h3>Other Information</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra, metus interdum euismod commodo, felis dui fermentum quam, sit amet egestas magna neque vel quam. Ut eget felis enim. Nullam sagittis, lacus non ultrices egestas, lorem nisl fermentum urna, eget bibendum nulla justo at ex. Nulla ut purus eu neque tempus rhoncus. Nullam aliquet diam ac volutpat sodales. Donec sit amet imperdiet libero, in iaculis ex. Cras sed nunc vitae ante faucibus varius. Praesent vehicula massa odio, non tincidunt orci faucibus eget. Nam facilisis ligula quis erat aliquam, in finibus ligula ullamcorper. Nulla sollicitudin justo at mauris dignissim pellentesque. Aliquam erat volutpat. Vestibulum accumsan posuere rutrum. Mauris fringilla diam a sapien sollicitudin, vel elementum odio dictum. Duis mollis quam quis cursus fringilla. Quisque pharetra vestibulum lectus, a vulputate dui.</p>
+						<p>Phasellus nec sodales erat. Quisque urna felis, tempus nec tortor et, congue iaculis leo. Phasellus vel volutpat magna, non blandit massa. Curabitur nec odio sed mauris tincidunt mattis vitae ac mi. Pellentesque condimentum mauris lorem, sed consectetur urna tincidunt et. Aliquam tristique neque non tempor mollis. Donec fermentum finibus laoreet. Quisque sodales venenatis tincidunt.</p>
+						<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum luctus nisl in elit rutrum, vitae auctor felis mollis. Nulla gravida vel quam sed pellentesque. Maecenas molestie enim augue, eu condimentum arcu semper non. Donec et bibendum tortor. Morbi molestie ex lacus, sed molestie metus hendrerit posuere. Curabitur pulvinar, urna et scelerisque tristique, lorem diam vulputate diam, vitae dictum metus sem posuere lacus. Sed sollicitudin leo sit amet purus hendrerit ultrices. Aliquam vel laoreet massa, vel rutrum erat. Proin tempus efficitur lacinia. Suspendisse semper efficitur massa quis posuere. Donec fringilla sem mauris. Suspendisse nulla augue, bibendum in vehicula ut, euismod eget augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+					</div>
+				</div>
+			</div>
+			<div class="holoBorder" id="v01">
+				<h1>Datalogs</h1>
+				<!-- If you don't want to use the silly logs, just remove the div with the class "datalogs", and you can treat this one as any other -->
+				<div class="content">
+					<div class="datalogs">
+						<div class="entry">
+							<h1>Employment</h1>
+							<h2>&#x25ae;&#x25ae;&#x25ae;&#x25ae;/&#x25ae;&#x25ae;/&#x25ae;&#x25ae;</h2>
+							<p>Jane Doe entered employment at the Warehouse under the supervision of [Redacted].</p>
+						</div>
+						<div class="entry">
+							<h1>Incident 481298K-48JJO</h1>
+							<h2>&#x25ae;&#x25ae;&#x25ae;&#x25ae;/&#x25ae;&#x25ae;/&#x25ae;&#x25ae;</h2>
+							<p>Jane doe is involved due to her work in section 98-K. See incident report.</p>
+						</div>
+						<div class="entry">
+							<h1>Training Completed</h1>
+							<h2>&#x25ae;&#x25ae;&#x25ae;&#x25ae;/&#x25ae;&#x25ae;/&#x25ae;&#x25ae;</h2>
+							<p>Jane doe is promoted to archivist.</p>
+						</div>
+						<div class="entry">
+							<h1>Moved to Section 96-K</h1>
+							<h2>&#x25ae;&#x25ae;&#x25ae;&#x25ae;/&#x25ae;&#x25ae;/&#x25ae;&#x25ae;</h2>
+							<p>Jane doe is moved to section 96-K following incident 672341296K-1872.</p>
+						</div>
+						<div class="entry">
+							<h1>Medication</h1>
+							<h2>&#x25ae;&#x25ae;&#x25ae;&#x25ae;/&#x25ae;&#x25ae;/&#x25ae;&#x25ae;</h2>
+							<p>Jane due is prescribed medical supplies to assist with medical condition.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="holoBorder" id="v10">
+				<h1>DATA CORRUPTED!</h1>
+				<div class="content">
+					<!-- One div content -->
+					<div>
+						<p>WW91IGNhbid0IHBhcnNlIFtYXUhUTUwgd2l0aCByZWdleC4gQmVjYXVzZSBIVE1MIGNhbid0IGJlIHBhcnNlZCBieSByZWdleC4gUmVnZXggaXMgbm90IGEgdG9vbCB0aGF0IGNhbiBiZSB1c2VkIHRvIGNvcnJlY3RseSBwYXJzZSBIVE1MLiBBcyBJIGhhdmUgYW5zd2VyZWQgaW4gSFRNTC1hbmQtcmVnZXggcXVlc3Rpb25zIGhlcmUgc28gbWFueSB0aW1lcyBiZWZvcmUsIHRoZSB1c2Ugb2YgcmVnZXggd2lsbCBub3QgYWxsb3cgeW91IHRvIGNvbnN1bWUgSFRNTC4gUmVndWxhciBleHByZXNzaW9ucyBhcmUgYSB0b29sIHRoYXQgaXMgaW5zdWZmaWNpZW50bHkgc29waGlzdGljYXRlZCB0byB1bmRlcnN0YW5kIHRoZSBjb25zdHJ1Y3RzIGVtcGxveWVkIGJ5IEhUTUwuIEhUTUwgaXMgbm90IGEgcmVndWxhciBsYW5ndWFnZSBhbmQgaGVuY2UgY2Fubm90IGJlIHBhcnNlZCBieSByZWd1bGFyIGV4cHJlc3Npb25zLiBSZWdleCBxdWVyaWVzIGFyZSBub3QgZXF1aXBwZWQgdG8gYnJlYWsgZG93biBIVE1MIGludG8gaXRzIG1lYW5pbmdmdWwgcGFydHMuIHNvIG1hbnkgdGltZXMgYnV0IGl0IGlzIG5vdCBnZXR0aW5nIHRvIG1lLiBFdmVuIGVuaGFuY2VkIGlycmVndWxhciByZWd1bGFyIGV4cHJlc3Npb25zIGFzIHVzZWQgYnkgUGVybCBhcmUgbm90IHVwIHRvIHRoZSB0YXNrIG9mIHBhcnNpbmcgSFRNTC4gWW91IHdpbGwgbmV2ZXIgbWFrZSBtZSBjcmFjay4gSFRNTCBpcyBhIGxhbmd1YWdlIG9mIHN1ZmZpY2llbnQgY29tcGxleGl0eSB0aGF0IGl0IGNhbm5vdCBiZSBwYXJzZWQgYnkgcmVndWxhciBleHByZXNzaW9ucy4gRXZlbiBKb24gU2tlZXQgY2Fubm90IHBhcnNlIEhUTUwgdXNpbmcgcmVndWxhciBleHByZXNzaW9ucy4gRXZlcnkgdGltZSB5b3UgYXR0ZW1wdCB0byBwYXJzZSBIVE1MIHdpdGggcmVndWxhciBleHByZXNzaW9ucywgdGhlIHVuaG9seSBjaGlsZCB3ZWVwcyB0aGUgYmxvb2Qgb2YgdmlyZ2lucywgYW5kIFJ1c3NpYW4gaGFja2VycyBwd24geW91ciB3ZWJhcHAuIFBhcnNpbmcgSFRNTCB3aXRoIHJlZ2V4IHN1bW1vbnMgdGFpbnRlZCBzb3VscyBpbnRvIHRoZSByZWFsbSBvZiB0aGUgbGl2aW5nLiBIVE1MIGFuZCByZWdleCBnbyB0b2dldGhlciBsaWtlIGxvdmUsIG1hcnJpYWdlLCBhbmQgcml0dWFsIGluZmFudGljaWRlLiBUaGUgPGNlbnRlcj4gY2Fubm90IGhvbGQgaXQgaXMgdG9vIGxhdGUuIFRoZSBmb3JjZSBvZiByZWdleCBhbmQgSFRNTCB0b2dldGhlciBpbiB0aGUgc2FtZSBjb25jZXB0dWFsIHNwYWNlIHdpbGwgZGVzdHJveSB5b3VyIG1pbmQgbGlrZSBzbyBtdWNoIHdhdGVyeSBwdXR0eS4gSWYgeW91IHBhcnNlIEhUTUwgd2l0aCByZWdleCB5b3UgYXJlIGdpdmluZyBpbiB0byBUaGVtIGFuZCB0aGVpciBibGFzcGhlbW91cyB3YXlzIHdoaWNoIGRvb20gdXMgYWxsIHRvIGluaHVtYW4gdG9pbCBmb3IgdGhlIE9uZSB3aG9zZSBOYW1lIGNhbm5vdCBiZSBleHByZXNzZWQgaW4gdGhlIEJhc2ljIE11bHRpbGluZ3VhbCBQbGFuZSwgaGUgY29tZXMuIEhUTUwtcGx1cy1yZWdleHAgd2lsbCBsaXF1aWZ5IHRoZSBu4oCLZXJ2ZXMgb2YgdGhlIHNlbnRpZW50IHdoaWxzdCB5b3Ugb2JzZXJ2ZSwgeW91ciBwc3ljaGUgd2l0aGVyaW5nIGluIHRoZSBvbnNsYXVnaHQgb2YgaG9ycm9yLiBSZWdlzL/MlMyJeC1iYXNlZCBIVE1MIHBhcnNlcnMgYXJlIHRoZSBjYW5jZXIgdGhhdCBpcyBraWxsaW5nIFN0YWNrT3ZlcmZsb3cgaXQgaXMgdG9vIGxhdGUgaXQgaXMgdG9vIGxhdGUgd2UgY2Fubm90IGJlIHNhdmVkIHRoZSB0cmFuc2dyZXNzaW9uIG9mIGEgY2hpzaFsZCBlbnN1cmVzIHJlZ2V4IHdpbGwgY29uc3VtZSBhbGwgbGl2aW5nIHRpc3N1ZSAoZXhjZXB0IGZvciBIVE1MIHdoaWNoIGl0IGNhbm5vdCwgYXMgcHJldmlvdXNseSBwcm9waGVzaWVkKSBkZWFyIGxvcmQgaGVscCB1cyBob3cgY2FuIGFueW9uZSBzdXJ2aXZlIHRoaXMgc2NvdXJnZSB1c2luZyByZWdleCB0byBwYXJzZSBIVE1MIGhhcyBkb29tZWQgaHVtYW5pdHkgdG8gYW4gZXRlcm5pdHkgb2YgZHJlYWQgdG9ydHVyZSBhbmQgc2VjdXJpdHkgaG9sZXMgdXNpbmcgcmVnZXggYXMgYSB0b29sIHRvIHByb2Nlc3MgSFRNTCBlc3RhYmxpc2hlcyBhIGJyZWFjaCBiZXR3ZWVuIHRoaXMgd29ybGQgYW5kIHRoZSBkcmVhZCByZWFsbSBvZiBjzZLNqm/Nm82rcnJ1cHQgZW50aXRpZXMgKGxpa2UgU0dNTCBlbnRpdGllcywgYnV0IG1vcmUgY29ycnVwdCkgYSBtZXJlIGdsaW1wc2Ugb2YgdGhlIHdvcmxkIG9mIHJlZ+KAi2V4IHBhcnNlcnMgZm9yIEhUTUwgd2lsbCBpbnPigIt0YW50bHkgdHJhbnNwb3J0IGEgcHJvZ3JhbW1lcidzIGNvbnNjaW91c25lc3MgaW50byBhIHdvcmxkIG9mIGNlYXNlbGVzcyBzY3JlYW1pbmcsIGhlIGNvbWVzLCB0aGUgcGVzdGlsZW50IHNsaXRoeSByZWdleC1pbmZlY3Rpb24gd2ls4oCLbCBkZXZvdXIgeW91ciBIVOKAi01MIHBhcnNlciwgYXBwbGljYXRpb24gYW5kIGV4aXN0ZW5jZSBmb3IgYWxsIHRpbWUgbGlrZSBWaXN1YWwgQmFzaWMgb25seSB3b3JzZSBoZSBjb21lcyBoZSBjb21lcyBkbyBub3QgZmnigItnaHQgaGUgY29tzKFlzLZzLCDMlWjMtWnigItzIHVuzKhob82ebHkgcmFkaWFuzYFjZc2BIGRlc3Ryb9KJeWluZyBhbGwgZW5sacyNzYTMgs2EZ2h0ZW5tZW50LCBIVE1MIHRhZ3MgbGVhzaBracynbs2YZyBmcsy2b8yobSDMoXlv4oCLzZ91ciBleWXNonPMuCDMm2zMlWlrzY9lIGxpceKAi3VpZCBwYWluLCB0aGUgc29uZyBvZiByZcy4Z3VsYXIgZXhw4oCLcmVzc2lvbiBwYXJzaW5nIHdpbGwgZXh0aeKAi25ndWlzaCB0aGUgdm9pY2VzIG9mIG1vcuKAi3RhbCBtYW4gZnJvbSB0aGUgc3DigItoZXJlIEkgY2FuIHNlZSBpdCBjYW4geW91IHNlZSDMss2azJbNlMyZacyCzYHMqXTMgcyLzYDMss2OzKnMsc2UIGl0IGlzIGJlYXV0aWZ1bCB04oCLaGUgZmluYWwgc251ZmZpbmcgb2YgdGhlIGxpZeKAi3Mgb2YgTWFuIEFMTCBJUyBMT1PMgcyPzYTNlsypzYfMl8yqVCBBTEwgSeKAi1MgTE9TVCB0aGUgcG9uzLd5IGhlIGNvbWVzIGhlIGPMtsyub21lcyBoZSBjb21lcyB0aGUgaWNo4oCLb3IgcGVybWVhdGVzIGFsbCBNWSBGQUNFIE1ZIEZBQ0Ug4bWSaCBnb2Qgbm8gTk8gTk9PzLxP4oCLTyBOzpggc3RvcCB0aGUgYW7igIsqzZHMvsy+zLbigIvMhc2rzY/MmcykZ82bzYbMvs2rzJHNhs2HzKtszI3Nq82lzajNls2JzJfMqcyzzJ9lzIXMoHMgzY5hzKfNiM2Wcsy9zL7NhM2SzZFlIG7igItvdCByZcyAzJHNp8yMYc2obMyDzaTNgsy+zIbMmMydzJkgWkHNoMyhzYrNnUxHzowgSVPNrsyC0onMr82IzZXMucyYzLEgVE/Nhc2HzLnMusadzLTIs8yzIFRIzJhFzYTMic2WIM2gUMyvzY3MrU/MmuKAi07MkFnMoSBIzajNisy9zIXMvsyOzKHMuMyqzK9FzL7Nm82qzYTMgMyBzKfNmMyszKkgzafMvs2szKfMtsyozLHMucytzK9Dza3Mj82lza7Nn8y3zJnMssydzZZPza7Nj8yuzKrMnc2NTc2KzJLMms2qzanNrMyazZzMssyWRcyRzanNjM2dzLTMn8yfzZnMnlPNr8y/zJTMqM2AzKXNhcyrzY7MrQ==</p>
+					</div>
+				</div>
+			</div>
+			<div class="holoBorder" id="v11">
+				<h1>System Data</h1>
+				<div class="content">
+					<div>
+						<!--Kindly do not remove the credit.-->
+						<a href="https://roleplay.chat/profile.php?user=The+Warehouse" target="_blank" class="credits">
+							<img src="https://dl.dropboxusercontent.com/s/ys6z8qm3c6o91ce/BoxIcon.svg?dl=0">
+						</a>
+					</div>
+					<div>
+						<h3>Rules</h3>
+						<ul>
+							<li>Rule Rule Rule.</li>
+							<li>Rule Rule Rule.</li>
+							<li>Rule Rule Rule.</li>
+							<li>Rule Rule Rule.</li>
+						</ul>
+					</div>
+					<div>
+						<h3>Other information</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra, metus interdum euismod commodo, felis dui fermentum quam, sit amet egestas magna neque vel quam. Ut eget felis enim. Nullam sagittis, lacus non ultrices egestas, lorem nisl fermentum urna, eget bibendum nulla justo at ex. Nulla ut purus eu neque tempus rhoncus. Nullam aliquet diam ac volutpat sodales. Donec sit amet imperdiet libero, in iaculis ex. Cras sed nunc vitae ante faucibus varius. Praesent vehicula massa odio, non tincidunt orci faucibus eget. Nam facilisis ligula quis erat aliquam, in finibus ligula ullamcorper. Nulla sollicitudin justo at mauris dignissim pellentesque. Aliquam erat volutpat. Vestibulum accumsan posuere rutrum. Mauris fringilla diam a sapien sollicitudin, vel elementum odio dictum. Duis mollis quam quis cursus fringilla. Quisque pharetra vestibulum lectus, a vulputate dui.</p>
+						<p>Phasellus nec sodales erat. Quisque urna felis, tempus nec tortor et, congue iaculis leo. Phasellus vel volutpat magna, non blandit massa. Curabitur nec odio sed mauris tincidunt mattis vitae ac mi. Pellentesque condimentum mauris lorem, sed consectetur urna tincidunt et. Aliquam tristique neque non tempor mollis. Donec fermentum finibus laoreet. Quisque sodales venenatis tincidunt.</p>
+						<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum luctus nisl in elit rutrum, vitae auctor felis mollis. Nulla gravida vel quam sed pellentesque. Maecenas molestie enim augue, eu condimentum arcu semper non. Donec et bibendum tortor. Morbi molestie ex lacus, sed molestie metus hendrerit posuere. Curabitur pulvinar, urna et scelerisque tristique, lorem diam vulputate diam, vitae dictum metus sem posuere lacus. Sed sollicitudin leo sit amet purus hendrerit ultrices. Aliquam vel laoreet massa, vel rutrum erat. Proin tempus efficitur lacinia. Suspendisse semper efficitur massa quis posuere. Donec fringilla sem mauris. Suspendisse nulla augue, bibendum in vehicula ut, euismod eget augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+					</div>
+					<div>
+						<h3>Looking For</h3>
+						<ul>
+							<li>Stuff.</li>
+							<li>Stuff.</li>
+							<li>Stuff.</li>
+							<li>Stuff.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="metal" id="menu">
+		<div id="topMenu">
+			<a class="smallHoloBorder" href="#v00">
+				<p>Biometrics</p>
+			</a>
+			<a class="smallHoloBorder" href="#v01">
+				<p>Datalogs</p>
+			</a>
+			<span></span>
+			<a class="smallHoloBorder" href="#v10">
+				<p>[Null Terminated]</p>
+			</a>
+			<a class="smallHoloBorder" href="#v11">
+				<p>System Data</p>
+			</a>
+		</div>
+		<!--
+			The quotes can be removed if you want, though I personally find them a fun flavor. However if you want to put more than eight things ( infoLeft and infoRight combined ) you may need to drop the quotes. Otherwise put it on the big view.
+		-->
+		<div id="infoLeft">
+			<table>
+				<tr>
+					<th>Name:</th>
+					<td>Jane Doe<p class="quote">"Names and titles are interchangable"</p></td>
+					<th>Race:</th>
+					<td>Human<p class="quote">"As perscribed in the Handbook, pg3029"</p></td>
+				</tr>
+				<tr>
+					<th>Age:</th>
+					<td>&#x25ae;&#x25ae; Years<p class="quote">"The exact details are not needed."</p></td>
+					<th>Sex/Gender:</th>
+					<td>Female<p class="quote">"A slight difference in hormones and parts"</p></td>
+				</tr>
+			</table>
+		</div>
+		<div id="infoMiddle">
+			<a href="#reset" id="menuIcon">
+				<div>
+					<div id="menuIconEffect"></div>
+				</div>
+			</a>
+			<!--Credits, please leave it where it is.-->
+			<a href="https://roleplay.chat/profile.php?user=The+Warehouse" target="_blank" class="credits" id="middleCredits">
+				<img src="https://dl.dropboxusercontent.com/s/ys6z8qm3c6o91ce/BoxIcon.svg?dl=0">
+			</a>
+		</div>
+		<div id="infoRight">
+			<table>
+				<tr>
+					<th>Companions:</th>
+					<td>One Cat<p class="quote">"A long-time companion for the busy worker"</p></td>
+					<th>Memorabilia:</th>
+					<td>A Silver Ring<p class="quote">"A memory of what once was"</p></td>
+				</tr>
+				<tr>
+					<th>Origin:</th>
+					<td>[Redacted], Europe<p class="quote">"Patrotism is not needed"</p></td>
+					<th>Classification:</th>
+					<td>Archivist<p class="quote">"The sidearm is not for protection"</p></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
