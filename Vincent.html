@@ -1,0 +1,937 @@
+<style>
+    body {
+        background: linear-gradient(to bottom, #9f98df -36%, #000 46%);
+        cursor: url('https://i.imgur.com/NjCacYP.png'), auto !important;
+        font-size: inherit;
+        font-weight: 400;
+    }
+
+    a, a:hover {
+        cursor: url('https://i.imgur.com/sGrdKiA.png'), auto !important;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        width: 0;
+        background: transparent;
+    }
+
+    #background {
+        position: fixed;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background: url('https://i.imgur.com/dY61IpJ.jpg') repeat;
+        filter: opacity(.1);
+    }
+
+    #render {
+        position: fixed;
+        margin: auto;
+        top: 0;
+        bottom: -100;
+        left: 0;
+        right: 0;
+        height: 800px;
+        width: 800px;
+        background: url('https://i.imgur.com/CE9qdaH.png') no-repeat center;
+        background-size: contain;
+    }
+
+    #texture {
+        position: fixed;
+        margin: auto;
+        bottom: 0;
+        top: 0;
+        left: -400;
+        right: 0;
+        height: 100%;
+        width: 175px;
+        background: url('https://i.imgur.com/dY61IpJ.jpg') no-repeat center;
+        background-size: cover;
+        filter: opacity(.3);
+        overflow: hidden;
+    }
+
+    #city {
+        position: fixed;
+        margin: auto;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: url('https://i.imgur.com/tKQgCca.png') no-repeat center;
+        background-size: cover;
+        text-align: center;
+        padding-left: 50px;
+        font-family: 'Manrope';
+        font-size: 200px;
+        font-style: italic;
+        text-align: center;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        line-height: 150px;
+        overflow: hidden;
+        filter: saturate(2.5) opacity(.5);
+    }
+
+    #citylights {
+        position: fixed;
+        margin: auto;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        padding-left: 50px;
+        font-family: 'Manrope';
+        font-size: 200px;
+        font-style: italic;
+        text-align: center;
+        color: transparent;
+        font-weight: 900;
+        line-height: 150px;
+        -webkit-text-stroke: 1px #9f98df;
+        transform: translate(10px, 10px);
+    }
+
+    #citytexture {
+        position: fixed;
+        margin: auto;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: url('https://i.imgur.com/tKQgCca.png') no-repeat center;
+        background-size: cover;
+        filter: opacity(.1);
+    }
+
+    #title { /* For the name and nothing else */
+        position: fixed;
+        margin: auto;
+        bottom: 0;
+        top: 0;
+        left: -400px;
+        right: 0;
+        height: 50px;
+        width: 100%;
+        letter-spacing: 3px;
+        text-align: center;
+        font-family: 'Manrope';
+        font-size: 25px;
+        line-height: 50px;
+        font-weight: 100;
+        color: #fff;
+        transform: rotate(-90deg);
+        padding-left: 200px;
+        transition: ease-in-out .8s;
+        filter: blur(0px);
+    }
+
+    #title b {
+        color: #9f98df;
+    }
+
+    body:hover #title {
+        filter: blur(25px);
+        transition: ease-in-out .8s;
+    }
+
+    .nav {
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .button {
+        height: 25px;
+        width: fit-content;
+        padding-bottom: 5px;
+        font-family: 'Manrope';
+        font-size: 15px;
+        font-weight: 900;
+        color: #fff;
+        text-shadow: 2px 2px 0px #000;
+        letter-spacing: 2px;
+        font-style: italic;
+        border-bottom: 3px solid #fff;
+        text-align: left;
+        line-height: 25px;
+    }
+
+    .first { /* button positions */
+        left: -400px;
+        top: -100px;
+        filter: blur(11px);
+        opacity: 0;
+        transition: ease-in-out .8s;
+    }
+
+    body:hover .first {
+        filter: blur(0px);
+        opacity: 1;
+        transition: ease-in-out .8s;
+    }
+
+    .second {
+        right: -400px;
+        top: -600px;
+        filter: blur(11px);
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    .third {
+        right: -400px;
+        bottom: -300px;
+        filter: blur(11px);
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    .fourth {
+        left: -400px;
+        bottom: -450px;
+        filter: blur(11px);
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    #about,
+    #story,
+    #friends,
+    #ooc {
+        display: none;
+    }
+
+    #clicker {
+        cursor: help;
+        border: none;
+        background: none;
+    }
+
+    .dossier {
+        position: fixed;
+        margin: auto;
+        top: -400;
+        left: -500px;
+        right: 0;
+        bottom: 0;
+        height: 300px;
+        width: 300px;
+        text-align: justify;
+        font-family: bitter;
+        font-size: 12px;
+        color: #fff;
+        line-height: 17px;
+        overflow: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    #about:checked~.dossier {
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    #about:checked~#title {
+        filter: blur(25px);
+        transition: ease-in-out .8s;
+    }
+
+    #about:checked~.dossiertitle {
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    #about:checked~.first {
+        filter: blur(11px);
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    #about:checked~.second {
+        filter: blur(0px);
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    .dossier span {
+        display: block;
+        background: linear-gradient(-30deg, #000 30%, transparent);
+        padding: 5px 10px;
+        border-radius: 2px;
+        width: fit-content;
+        box-shadow: 1px 1px 4px #9f98df;
+        margin: 10px 10px;
+        height: 15px;
+        text-align: left;
+        font-family: 'Manrope';
+        font-size: 12px;
+        color: #fff;
+        text-shadow: -1px -1px 0px #000;
+        border: 1px solid #000;
+        line-height: 15px;
+        transition: ease-in-out .8s;
+    }
+
+    .dossier span i {
+        font-style: italic;
+        font-family: 'bitter';
+        font-size: 9px;
+        letter-spacing: 3px;
+        color: #dbbec3;
+    }
+
+    .dossier span:hover {
+        border: 1px solid #9f98df;
+        transition: ease-in-out .8s;
+    }
+
+    .dossiertitle {
+        position: fixed;
+        margin: auto;
+        top: -50px;
+        left: -350px;
+        bottom: 0;
+        height: 50px;
+        right: 0;
+        width: 200px;
+        text-align: center;
+        font-family: 'Manrope';
+        font-size: 35px;
+        font-weight: 900;
+        font-style: italic;
+        color: transparent;
+        -webkit-text-stroke: 1px #9f98df;
+        text-shadow: 0px -30px 0px #9f98df8a, 0px -60px 0px #9f98df21;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    .longe {
+        position: fixed;
+        margin: auto;
+        top: -500px;
+        left: 0;
+        right: -900px;
+        bottom: 0;
+        height: 200px;
+        width: 360px;
+        background: linear-gradient(to top right, #040404 25%, transparent);
+        border-radius: 5px;
+        border: 1px solid #000;
+        text-align: justify;
+        font-family: fira sans;
+        font-size: 11px;
+        color: #fff;
+        line-height: 17px;
+        box-shadow: 1px 1px 4px #9f98df;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    .longe:hover {
+        height: 350px;
+        transition: ease-in-out .8s;
+    }
+
+    .abouttitle {
+        position: fixed;
+        margin: auto;
+        top: -100px;
+        right: -900px;
+        bottom: 0;
+        height: 100px;
+        left: 0;
+        width: 400px;
+        text-align: center;
+        font-family: 'Manrope';
+        font-size: 50px;
+        font-weight: 900;
+        font-style: italic;
+        text-align: left;
+        color: transparent;
+        -webkit-text-stroke: 1px #9f98df;
+        text-shadow: 0px -30px 0px #9f98df8a, 0px -60px 0px #9f98df21;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    .quote {
+        position: fixed;
+        margin: auto;
+        top: -675px;
+        left: 0;
+        right: -425px;
+        bottom: 0;
+        height: 50px;
+        width: 90px;
+        line-height: 97px;
+        text-align: center;
+        font-style: italic;
+        color: transparent;
+        font-size: 108px;
+        background: linear-gradient(to bottom right, #9f98df 35%, #dbbec3);
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: 100;
+        text-shadow: 3px 3px 0px #040404;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    #story:checked~.longe {
+        opacity: 1;
+        visibility: visible;
+        transition: .6s linear;
+    }
+
+    #story:checked~.abouttitle {
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    #story:checked~.second {
+        filter: blur(11px);
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    #story:checked~.third {
+        filter: blur(0px);
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    #story:checked~.quote {
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    .longetext {
+        float: right;
+        margin-right: 20px;
+        margin-top: 20px;
+        height: 160px;
+        width: 320px;
+        overflow: auto;
+        transition: ease-in-out .8s;
+    }
+
+    .longe:hover .longetext {
+        height: 310px;
+        transition: ease-in-out .8s;
+    }
+
+    .longetext h1 {
+        font-family: 'Manrope';
+        font-size: 11px;
+        letter-spacing: 3px;
+        font-weight: 900;
+        color: #9f98df;
+        font-style: italic;
+        text-transform: uppercase;
+        display: block;
+        border-bottom: 1px solid #9f98df;
+        padding-bottom: 5px;
+        margin: 5px;
+        width: fit-content;
+    }
+
+    .longetext h2 {
+        margin-top: -20px;
+        font-family: 'fira sans';
+        font-size: 10px;
+        font-style: italic;
+        font-weight: 100;
+        text-align: right;
+        display: block;
+        text-shadow: 1px 1px 4px #000;
+        color: #fff;
+    }
+
+    .longetext p {
+        border-left: 1px solid #9f98df;
+        padding-left: 10px;
+    }
+
+    .holder {
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: -900px;
+        bottom: -350px;
+        height: 350px;
+        width: 350px;
+        overflow: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    .container {
+        float: left;
+        display: block;
+        height: 100px;
+        width: 300px;
+        background: linear-gradient(to right, #000, transparent);
+        border: 1px solid #000;
+        box-shadow: 1px 1px 4px #9f98df;
+        border-radius: 5px;
+        font-family: 'fira sans';
+        font-size: 10px;
+        color: #fff;
+        text-shadow: 1px 1px 0px #000;
+        font-weight: 100;
+        text-align: justify;
+        overflow: hidden;
+        margin-bottom: 15px;
+        transition: ease-in-out .8s;
+    }
+
+    .container:hover {
+        border: 1px solid #9f98df;
+        transition: ease-in-out .8s;
+    }
+
+    .icons {
+        float: left;
+        display: block;
+        margin-top: 6px;
+        margin-left: 6px;
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        border: 5px solid #000;
+        box-shadow: 1px 1px 1px transparent;
+        background-image: url('/');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        filter: grayscale(1);
+        transition: ease-in-out .8s;
+    }
+
+    .container:hover .icons {
+        filter: grayscale(0);
+        transition: ease-in-out .8s;
+    }
+
+    .description {
+        float: left;
+        display: block;
+        height: 75px;
+        width: 175px;
+        margin-left: 12px;
+        overflow: hidden;
+        margin-top: 6px;
+        line-height: 17px;
+    }
+
+    .description a {
+        font-family: 'Manrope';
+        font-size: 10px;
+        letter-spacing: 3px;
+        font-weight: 900;
+        color: #9f98df;
+        text-transform: uppercase;
+        font-family: 'Manrope';
+        display: inline-block;
+        margin: 5px;
+        width: fit-content;
+        text-decoration: none;
+        transition: ease-in-out .8s;
+    }
+
+    .description a:hover {
+        color: #999;
+        transition: ease-in-out .8s;
+    }
+
+    .description i {
+        font-style: italic;
+        font-family: 'bitter';
+        font-size: 6px;
+        letter-spacing: 3px;
+        color: #dbbec3;
+    }
+
+    .description p {
+        border-left: 1px solid #9f98df;
+        padding-left: 15px;
+        line-height: 12px;
+        height: 35px;
+        overflow: auto;
+    }
+
+    .friendtitle {
+        position: fixed;
+        margin: auto;
+        top: 0px;
+        right: -1215;
+        transform: rotate(90deg);
+        bottom: -375;
+        height: 100px;
+        left: 0;
+        width: 400px;
+        text-align: center;
+        font-family: 'Manrope';
+        font-size: 50px;
+        font-weight: 900;
+        font-style: italic;
+        text-align: left;
+        color: transparent;
+        -webkit-text-stroke: 1px #9f98df;
+        text-shadow: 0px 30px 0px #9f98df8a, 0px 60px 0px #9f98df21;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    #friends:checked~.holder {
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    #friends:checked~.friendtitle {
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    #friends:checked~.third {
+        filter: blur(11px);
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    #friends:checked~.fourth {
+        filter: blur(0px);
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    .outofcharacter {
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: -650px;
+        bottom: -500px;
+        width: 200px;
+        height: 300px;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+        overflow: auto;
+    }
+
+    .outofcharacter span {
+        background: linear-gradient(to right, transparent 50%, #9f98df);
+        border: 1px solid #000;
+        border-radius: 3px;
+        line-height: 15px;
+        padding: 5px 10px;
+        text-align: left;
+        font-family: 'fira sans';
+        font-size: 10px;
+        color: #fff;
+        text-shadow: 1px 1px 2px #000;
+        margin: 4px 10px;
+        display: block;
+        width: fit-content;
+
+    }
+
+    .outofcharacter span i {
+        font-style: italic;
+        font-family: 'bitter';
+        font-size: 8px;
+        letter-spacing: 3px;
+        color: #dbbec3;
+    }
+
+    .ooctitle {
+        position: fixed;
+        margin: auto;
+        top: 0px;
+        left: -415;
+        transform: rotate(-90deg);
+        bottom: -375;
+        height: 100px;
+        right: 0;
+        width: 400px;
+        text-align: center;
+        font-family: 'Manrope';
+        font-size: 36px;
+        font-weight: 900;
+        font-style: italic;
+        text-align: left;
+        color: transparent;
+        -webkit-text-stroke: 1px #9f98df;
+        text-shadow: 0px 30px 0px #9f98df8a, 0px 60px 0px #9f98df21;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+
+    #ooc:checked~.outofcharacter {
+        opacity: 1;
+        visibility: visible;
+        transition: .8s linear;
+    }
+
+    #ooc:checked~.ooctitle {
+        opacity: 1;
+        visibility: visible;
+        transition: ease-in-out .8s;
+    }
+
+    #ooc:checked~.fourth {
+        filter: blur(11px);
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in-out .8s;
+    }
+</style>
+
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400;1,500;1,700&family=Fira+Sans:ital,wght@0,400;0,600;1,400;1,500&family=Manrope:wght@200;400;500;600;700&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <div id="citytexture"></div>
+    <div id="background"></div>
+    <div id="texture"></div>
+    <div id="city">
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+    </div>
+    <div id="citylights">
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+        VIN<br>
+    </div>
+        <input type="checkbox" id="about">
+        <div class="dossier">
+            <span><i>name,</i> vincent 'verdachiel' aslanov.</span>
+            <span><i>age,</i> twenty-eight years old.</span>
+            <span><i>birthday,</i> august third.</span>
+            <span><i>weight,</i> two-hundred fourty-five pounds.</span>
+            <span><i>height,</i> six feet four inches.</span>
+            <span><i>demeanor,</i> gregarious, kind.</span>
+            <span><i>paramour,</i> s̝̙ͭ̄ȅ̩̱͗͢v̶e̯̯r̫̤͉̔̂̍͟e̷d͉͍̈́̎.</span>
+            <span><i>occupation,</i> craftsman.</span>
+            <span><i>residence,</i> city loft.</span>
+            <span><i>hobbies,</i> techie, shoe collecting.</span>
+            <span><i>stat,</i> text.</span>
+            <span><i>stat,</i> text.</span>
+            <span><i>stat,</i> text.</span>
+        </div>
+        <div class="dossiertitle" style="pointer-events: none;">dossier.</div>
+        <input type="checkbox" id="story">
+        <div class="longe">
+            <div class="longetext">
+                <h1>these memories.</h1>
+                <h2>painted on glass, yet unbreakable.</h2>
+                <p>
+                    The 'Red String', otherwise known as the concept of 'Soulmates' forever bound to one another in every life,
+                    was in fact a magic that a certain young man had turned to in order to fulfill the wishes of his dying lover.
+                    Through each and every incarnation of their lives, they would come to discover their past memories as they came
+                    of age, a perpetual cycle that would lead them back to one another each and every time no matter where in the world
+                    they were. However, through many lifetimes they began to feel that 'Red String' weakening, their memories
+                    becoming distorted and overlapping with their past lives.
+                </p>
+                <p>
+                    It wasn't until Verdachiel, or rather 'Vincent' as he went by now, had taken things into his own hands in order to
+                    free his partner from the painful inevitability of their minds succumbing to the cruel sands of times. Seeking out
+                    the once long-gone magic at its source, he traveled with his lover to see her off for one final time, to tell her that
+                    even should she forget him that he would always love and cherish the moments they spent together. The irreversible
+                    process of 'severance' cut the 'Red String' binding their souls, and in the process wiping away any and all memories
+                    his significant other had of him and their time together.
+                </p>
+                <p>
+                    While his memories remain intact and unblurred, Vincent finds the reminiscence and nostalgia of his lost life to be too
+                    much, resulting in him moving away in an attempt to start over anew. For better or worse, he is freed from the cycle,
+                    his 'last' life made painfully evident before him now. Only time can tell what he'll eventually find, to discover the
+                    renewed purpose of his existence now.
+                </p>
+            </div>
+        </div>
+        <div class="abouttitle" style="pointer-events: none;">about.</div>
+        <input type="checkbox" id="friends">
+        <div class="holder">
+            <div class="container">
+                <div class="icons" style="background-image: url('https://i.imgur.com/gsRctLa.png');"></div>
+                <div class="description">
+                    <a href="https://roleplay.chat/profile.php?user=antiquarian" target="_blank">marian.</a> <i>contractor.</i>
+                    <p>
+                        "what do you mean it's not crap? the thing's practically rusted over. fine, but i better get a cut
+                        when you sell this to the next loon."
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="icons" style="background-image: url('https://i.imgur.com/Iqk5gnn.png');"></div>
+                <div class="description">
+                    <a href="https://roleplay.chat/profile.php?user=Pippa" target="_blank">pippa.</a> <i>neighbor.</i>
+                    <p>
+                        "thanks for helpin' me out. it's gotten a lot easier to adjust to city life thanks to you.
+                        i'll get you some snacks next time."
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="icons" style="background-image: url('https://i.imgur.com/s5sJ6f7.png');"></div>
+                <div class="description">
+                    <a href="#" target="_blank">name.</a> <i>relation.</i>
+                    <p>Nunc sodales eu est non congue. Proin dictum quam ante, sit amet sollicitudin ante fermentum
+                        pharetra. Sed vel sollicitudin libero. Nullam egestas tincidunt mollis. Nam in metus ac dui
+                        mollis suscipit. Donec vel suscipit nisi, quis vehicula tellus. Pellentesque feugiat congue
+                        lorem ut tempor. Cras commodo lorem velit. Phasellus nunc enim, ultricies viverra velit id,
+                        ultricies suscipit lectus. Sed vel nibh eu ligula pulvinar sagittis a sed arcu. Vestibulum ac
+                        magna sagittis, blandit lorem nec, eleifend massa.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="icons" style="background-image: url('https://i.imgur.com/s5sJ6f7.png');"></div>
+                <div class="description">
+                    <a href="#" target="_blank">name.</a> <i>relation.</i>
+                    <p>Nunc sodales eu est non congue. Proin dictum quam ante, sit amet sollicitudin ante fermentum
+                        pharetra. Sed vel sollicitudin libero. Nullam egestas tincidunt mollis. Nam in metus ac dui
+                        mollis suscipit. Donec vel suscipit nisi, quis vehicula tellus. Pellentesque feugiat congue
+                        lorem ut tempor. Cras commodo lorem velit. Phasellus nunc enim, ultricies viverra velit id,
+                        ultricies suscipit lectus. Sed vel nibh eu ligula pulvinar sagittis a sed arcu. Vestibulum ac
+                        magna sagittis, blandit lorem nec, eleifend massa.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="icons" style="background-image: url('https://i.imgur.com/s5sJ6f7.png');"></div>
+                <div class="description">
+                    <a href="#" target="_blank">name.</a> <i>relation.</i>
+                    <p>Nunc sodales eu est non congue. Proin dictum quam ante, sit amet sollicitudin ante fermentum
+                        pharetra. Sed vel sollicitudin libero. Nullam egestas tincidunt mollis. Nam in metus ac dui
+                        mollis suscipit. Donec vel suscipit nisi, quis vehicula tellus. Pellentesque feugiat congue
+                        lorem ut tempor. Cras commodo lorem velit. Phasellus nunc enim, ultricies viverra velit id,
+                        ultricies suscipit lectus. Sed vel nibh eu ligula pulvinar sagittis a sed arcu. Vestibulum ac
+                        magna sagittis, blandit lorem nec, eleifend massa.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="icons" style="background-image: url('https://i.imgur.com/s5sJ6f7.png');"></div>
+                <div class="description">
+                    <a href="#" target="_blank">name.</a> <i>relation.</i>
+                    <p>Nunc sodales eu est non congue. Proin dictum quam ante, sit amet sollicitudin ante fermentum
+                        pharetra. Sed vel sollicitudin libero. Nullam egestas tincidunt mollis. Nam in metus ac dui
+                        mollis suscipit. Donec vel suscipit nisi, quis vehicula tellus. Pellentesque feugiat congue
+                        lorem ut tempor. Cras commodo lorem velit. Phasellus nunc enim, ultricies viverra velit id,
+                        ultricies suscipit lectus. Sed vel nibh eu ligula pulvinar sagittis a sed arcu. Vestibulum ac
+                        magna sagittis, blandit lorem nec, eleifend massa.</p>
+                </div>
+            </div>
+        </div>
+        <div class="friendtitle" style="pointer-events: none;">& contacts.</div>
+        <div class="quote" style="pointer-events: none;">❝</div>
+        <input type="checkbox" id="ooc">
+        <div class="outofcharacter">
+            <span><i>dms?</i> go for it.</span>
+            <span><i>genre?</i> slice-of-life +/- fantasy.</span>
+            <span><i>post length?</i> shitpost-novella.</span>
+            <span><i>ooc contact?</i> eat my ass.</span>
+            <span><i>profile?</i> everything scrolls.</span>
+            <span><i>credit?</i> <b>by me, bitch. fuck off.</b>. </span>
+            <span><i>hotel?</i> trivago.</span>
+        </div>
+        <div class="ooctitle" style="pointer-events: none;">out of character.</div>
+        <div id="render" style="pointer-events: none;"></div>
+        <div class="nav first button">
+            <label for="about" id="clicker">
+                stats.
+            </label>
+        </div>
+        <div class="nav second button">
+            <label for="story" id="clicker">
+                story.
+            </label>
+        </div>
+        <div class="nav third button">
+            <label for="friends" id="clicker">
+                friends.
+            </label>
+        </div>
+        <div class="nav fourth button">
+            <label for="ooc" id="clicker">
+                ooc.
+            </label>
+        </div>
+
+    </style>
+
+        <div id="title" style="pointer-events:none;"><b>VINCENT</b> ASLANOV</div>
+

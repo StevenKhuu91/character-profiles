@@ -1,0 +1,261 @@
+<style>
+
+    body {
+        cursor: url('https://i.imgur.com/gIONUZf.png'), auto !important;
+        background: #000000;
+        background: radial-gradient(circle, #000000 11%, #1b1f2b 95%, #1f2932 100%);
+        color: #ffffff;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 14px;
+    }
+
+    .container {
+        position: fixed; margin: auto;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        width: 600px; height: 800px;
+        border-top: 10px double #111111;
+        border-bottom: 10px double #111111;
+        box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.80);
+        -webkit-box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.80);
+        -moz-box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.80);
+        -o-box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.80);
+        -ms-box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.80);
+    }
+
+    .background {
+        background-image: url("https://i.imgur.com/OWr8jnh.png");
+        width: 600px; height: 800px;
+        filter:brightness(55%);
+        z-index: -999;
+    }
+
+    .tooltip {
+        display: block;
+        position: fixed;
+        width: 200px; height: auto;
+        padding: 5px 10px;
+        background: #000000;
+        text-align: center;
+        color: #ffffff;
+        font-style: normal;
+        border-radius: 2px;
+        outline: 3px double #ffffff;
+        outline-offset: 5px;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 999;
+        transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+    }
+
+    .detail {
+        font-weight: normal;
+        transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+    }
+
+    .detail:hover { color: #ffffff; }
+
+    .detail:hover .tooltip {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .imageRender {
+        background-image: url("https://i.imgur.com/6zxkZ9k.png");
+        width: 400px; height: 499px;
+        position: absolute;
+        right: 0px; bottom: 0px;
+        filter: drop-shadow(-2px 0px 0px black)
+                drop-shadow(1px 0px 0px black)
+                drop-shadow(-25px -10px 8px #000000);
+        -webkit-filter: drop-shadow(-2px 0px 0px black)
+                        drop-shadow(1px 0px 0px black)
+                        drop-shadow(-25px -10px 8px #000000);
+        -moz-filter:    drop-shadow(-2px 0px 0px black)
+                        drop-shadow(1px 0px 0px black)
+                        drop-shadow(-25px -10px 8px #000000);
+        -o-filter:      drop-shadow(-2px 0px 0px black)
+                        drop-shadow(1px 0px 0px black)
+                        drop-shadow(-25px -10px 8px #000000);
+        -ms-filter:     drop-shadow(-2px 0px 0px black)
+                        drop-shadow(1px 0px 0px black)
+                        drop-shadow(-25px -10px 8px #000000);
+    }
+
+    .verticalBar {
+        position: absolute;
+        width: 100px; height: 100%;
+        left: 25px; bottom: 0px;
+        background-color: #00000067;
+    }
+
+    .horizontalBar {
+        position: absolute;
+        width: 100%; height: 100px;
+        left: 0px; top: 25px;
+        background-color: #00000067;
+    }
+
+    .statsContainer {
+        position: absolute; margin: auto;
+        top: 0; bottom: 0;
+        left: -375; right: 0;
+        width: 160px; height: 500px;
+    }
+
+    .stats i {
+        display: block;
+        background: #000000;
+        background: linear-gradient(90deg, #000000 11%, #1b1f2b 51%, #445c71 100%);
+        padding: 5px 10px;
+        width: 180; height: 15px;
+        box-shadow: 1px 1px 4px #598a91;
+        border: 1px solid #000;
+        border-radius: 2px;
+        margin: 10px 10px;
+        font-size: 14px;
+        color: #bdbdbd;
+        text-shadow: -1px -1px 0px #203b58;
+        line-height: 15px;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+
+        &:hover {
+            box-shadow: 1px 1px 4px #566161;
+            border: 1px solid #475353;
+            transition: all 0.3s ease-in-out;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                -ms-transition: all 0.3s ease-in-out;
+        }
+    }
+
+    /* .stats span left {
+        color: #175da3;
+        text-shadow: -1px -1px 0px #203b58;
+        text-align: left;
+        float: left;
+    }
+
+    .stats span right {
+        color: #ffffff;
+        text-shadow: -1px -1px 0px #000;
+        text-align: right;
+        float: right;
+    } */
+
+
+</style>
+
+<div class="container">
+    <div class="background"></div>
+    <div class="verticalBar"></div>
+    <div class="horizontalBar"></div>
+
+    <div class="statsContainer">
+        <div class="stats">
+            <i>Theodoric Pierce</i>
+            <i>Paranormal Investigator</i>
+            <i>6'3" - Early 30s </i>
+            <i>Broody - Detatched</i>
+            <i>Pansexual - Solitary</i>
+            <i class="detail">Out Of Character*
+                <span class="tooltip">
+                    IC≠OOC. Keep your RL dramatics away from me. Shitpost to Novella. Modern-Supernatural Themes. Code ain't yours, don't touch it.
+                </span>
+            </i>
+        </div>
+    </div>
+
+    <div class="imageRender"></div>
+
+<!-- <b class="detail">Hover Element Here
+    <span class="tooltip">
+        Tooltip Info Here
+    </span></b> ( TEXT TOOLTIP )
+
+<b class="detail"><img src="" style="width: 100px; height: 100px;">
+    <span class="tooltip">
+        Tooltip Info Here ( IMAGE TOOLTIP )
+    </span></b> -->
+
+</div>
+
+
+<script type="text/javascript">
+
+/*-- SECURITY MEASURES --*/
+
+    window.onload = function() {
+        document.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+        }, false);
+        document.addEventListener("keydown", function(e) {
+        //document.onkeydown = function(e) {
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+        }
+        if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+        }
+        if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+        }
+        if (event.keyCode == 123) {
+        disabledEvent(e);
+        }
+        }, false);
+        function disabledEvent(e){
+        if (e.stopPropagation){
+        e.stopPropagation();
+        } else if (window.event){
+        window.event.cancelBubble = true;
+        }
+        e.preventDefault();
+        return false;
+        }
+    };
+
+    if (document.addEventListener) {
+        document.addEventListener('contextmenu', function(e) {
+            alert("🖕"); // RIGHT-CLICK MESSAGE HERE
+            e.preventDefault();
+            }, false);
+            } else {
+            document.attachEvent('oncontextmenu', function() {
+            alert("🖕"); // RIGHT-CLICK MESSAGE HERE
+            window.event.returnValue = false;
+            });
+        }
+
+/*-- TOOLTIPS --*/
+
+var tooltip = document.querySelectorAll('.tooltip');
+
+document.addEventListener('mousemove', ttp, false);
+
+function ttp(e) {
+ for (var i=tooltip.length; i--;) {
+ tooltip[i].style.left = e.pageX + 10 + 'px';
+ tooltip[i].style.top = e.pageY + 60 + 'px';
+ }
+}
+
+</script>

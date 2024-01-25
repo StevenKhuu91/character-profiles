@@ -1,0 +1,451 @@
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap'); /*--- Default Font ---*/
+        /*--- font-family: 'Quattrocento', serif; ---*/
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap'); /*--- H1 Header Font ---*/
+        /*--- font-family: 'Cinzel Decorative', cursive; ---*/
+    @import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap'); /*--- Name Font ---*/
+        /*--- font-family: 'Charm', cursive; ---*/
+    @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap'); /*--- I Font ---*/
+        /*--- font-family: 'Charm', cursive; ---*/
+    @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap'); /*--- U Font ---*/
+        /*--- font-family: 'Arima Madurai', cursive; ---*/
+
+/*---------- GENERAL PROFILE RULES ----------*/
+
+    body { /*--- This applies rules for the ENTIRE profile, like default font and size. Change as needed! ---*/
+        font-family: 'Quattrocento', serif;
+        font-size: 15px;
+        text-align: justify;
+        color: #ffffff;
+        cursor: url("https://i.imgur.com/PhrPMCj.png"), auto !important;
+        background-color: #000000;
+    }
+
+    .background {
+        position: fixed; margin: auto;
+        top: 0; left: 0; right: 0; bottom: 0;
+        height: 100%; width: 100%;
+        background:
+            -webkit-linear-gradient(300deg,#fdbab3 0%, hsla(95.09, 55.96%, 53.06%, 0) 65%), /*--- Adjust these values as you like! ---*/
+            -webkit-linear-gradient(218deg, #413d55 0%, hsla(135.36, 92.27%, 48.65%, 0) 70%),
+            -webkit-linear-gradient(65deg, #a2aecb 10%, hsla(184.74, 29.23%, 25.49%, 0) 70%),
+            -webkit-linear-gradient(135deg, #553250 15%, hsla(65.74, 85.5%, 63.1%, 0) 100%);
+    }
+
+    .bg-texture {
+        height: 100%; width: 100%;
+        background-image: url('https://i.imgur.com/8XRTqof.png');
+        background-repeat: repeat;
+        opacity: 0.4;
+    }
+
+    ::-webkit-scrollbar { width: 2px; } /*--- Scrollbar Track ---*/
+    ::-webkit-scrollbar-thumb:vertical { border: 0px solid transparent; background-color: transparent; height: auto; } /*--- Actual Scrollbar Dimensions ---*/
+
+    p { text-indent: 15px; }
+    a {
+        text-decoration: none;
+        cursor: url(https://i.imgur.com/PhrPMCj.png), auto;
+        color: #39a5e9;
+        transition: all 0.45s ease-in-out;
+                -webkit-transition: all 0.45s ease-in-out;
+                -moz-transition: all 0.45s ease-in-out;
+                -o-transition: all 0.45s ease-in-out;
+                -ms-transition: all 0.45s ease-in-out;
+    }
+        a:hover {
+            text-decoration: none;
+            color: #e79898;
+            transition: all 0.45s ease-in-out;
+                -webkit-transition: all 0.45s ease-in-out;
+                -moz-transition: all 0.45s ease-in-out;
+                -o-transition: all 0.45s ease-in-out;
+                -ms-transition: all 0.45s ease-in-out;
+        }
+    b { color: #b1416a; }
+    i { font-family: 'Poiret One', cursive; font-size: 16px; color: #a2aecb; }
+    u { font-family: 'Arima Madurai', cursive; font-size: 15px; color: #fdbab3; text-decoration: none; }
+    h1 { font-family: 'Cinzel Decorative', cursive; font-size: 16px; margin-top: 0px; padding-left: 10px; }
+    h2 { font-size: 20px; font-style: italic; font-variant: small-caps; font-weight: normal; text-align: left; padding-left: 5px; margin-bottom: 0px; margin-top: 0px; }
+
+    @keyframes starUNO {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    @keyframes starDOS {
+        0% { line-height: 30px; transform: translatey(0px); }
+        55% { transform: translatey(-20px); }
+        60% { line-height: 10px; }
+        100% { line-height: 30px; transform: translatey(0px); }
+    }
+
+    #tooltip {
+        position: fixed;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        margin: 9;
+        max-width: 150;
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        box-shadow: 3px -3px 10px #000000;
+        color: #000000;
+        line-height: 15px;
+        text-align: justify;
+        text-decoration: none;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: .1s;
+        z-index: 9999!important;
+    }
+
+    .tooltip { position: relative; display: inline-block; }
+
+        .tooltip-content {
+            visibility: hidden;
+            position: absolute;
+            margin-top: 5px; margin-left: 25px;
+            width: 150px; min-height: 10px;
+            padding-left: 10px; padding-right: 10px;
+            padding-top: 15px; padding-bottom: 15px;
+            box-shadow: 3px -3px 10px #000000;
+            border: 3px solid #4e97cc;
+            border-radius: 8px;
+            background-color: #2e2e2e;
+            color: #ffffff;
+            text-align: justify; /*--- Change this to left/right/center/etc. to fit your tooltip style! ---*/
+            line-height: 16px;
+            vertical-align: middle;
+            z-index: 69;
+        }
+
+        .tooltip:hover .tooltip-content {
+            visibility: visible;
+        }
+
+/*---------- BOXES/CONTAINERS ----------*/
+/*-- Containers = Invisible. Boxes = Visible ---*/
+
+    .main-container { /*--- Contains everything in the middle. ---*/
+        margin: auto; position: fixed;
+        left: 0px; right: 0px; top: 0px; bottom: 0px;
+        width: 800px; height: 502px;
+        border-bottom: 4px solid #7a6b8b;
+        overflow: auto;
+    }
+
+    .first-container {
+        margin: auto; position: absolute;
+        top: 0px; bottom: 0px; left: 0px; right: 0px;
+        width: 700px; height: 500px;
+        background-image: url("https://i.imgur.com/WGbbIV4.png");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 2%;
+    }
+
+    .second-container {
+        margin: auto; position: absolute;
+        top: 800px; bottom: 0px; left: 0px; right: 0px;
+        width: 700px; height: 500px;
+        background-image: url("https://i.imgur.com/vXpLgXD.png");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 2%;
+    }
+
+    .stats-box {
+        position: absolute; float: left;
+        margin-left: 190px; margin-top: 30px;
+        width: 245px; height: 415px;
+        padding: 10px;
+        line-height: 25px;
+        background: #00000022;
+        backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        box-shadow: 5px 8px 20px #000000;
+    }
+
+    .ooc-container {
+        position: absolute; float: left;
+        margin-left: 480px; margin-top: 130px; /*--- Adjust Margin TOP to align the OOC and make it centered! ---*/
+        width: 190px; height: 300px;
+    }
+
+        .ooc-line {
+        width: 100%; height: 22px;
+        padding-top: 3px; padding-left: 5px;
+        margin-bottom: 5px;
+        backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        box-shadow: 2px 2px 10px #000000;
+        }
+
+    .story-box {
+        position: absolute; float: left;
+        margin-left: 185px; margin-top: 30px;
+        width: 470px; height: 180px;
+        padding: 10px;
+        background: #00000022;
+        backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        box-shadow: 5px 8px 20px #000000;
+        overflow: auto;
+    }
+
+    .abilities-box {
+        position: absolute; float: left;
+        margin-left: 185px; margin-top: 270px;
+        width: 470px; height: 180px;
+        padding: 10px;
+        background: #00000022;
+        backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        box-shadow: 5px 8px 20px #000000;
+        overflow: auto;
+    }
+
+    /*--- DECORATIONS/ETC. ---*/
+
+    .middle-bar {
+        margin: auto; position: fixed;
+        left: 0px; right: 0px; top: 0px; bottom: 0px;
+        width: 100%; height: 200px;
+        background-color: #b39eca;
+        border-top: 5px solid #7a6b8b;
+        border-bottom: 5px solid #7a6b8b;
+        z-index: -99;
+    }
+
+    .scroll-1 {
+        margin: auto; position: fixed;
+        left: 0px; right: -720px; top: -240px; bottom: 0px;
+        width: 1px; height: 175px;
+        border-left: 1px solid #ffffff;
+    }
+
+    .scroll-symbol {
+        margin: auto; position: fixed;
+        left: 0px; right: -730px; top: 0px; bottom: -20px;
+        width: 70px; height: 10px;
+        font-size: 14px;
+        transform: rotate(90deg);
+        font-variant: small-caps;
+    }
+
+    .scroll-2 {
+        margin: auto; position: fixed;
+        left: 0px; right: -720px; top: 0px; bottom: -280px;
+        width: 1px; height: 175px;
+        border-left: 1px solid #ffffff;
+    }
+
+    .star-1 {
+        position: absolute;
+        margin-left: 150px; margin-top: 20px;
+        opacity: 0.6;
+        width: 52px; height: 60px;
+        background-image: url("https://i.imgur.com/tKVskRa.png");
+        animation-name: starUNO;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+            transition: .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+    }
+
+    .star-2 {
+        position: absolute;
+        margin-left: 430px; margin-top: 445px;
+        opacity: 0.6;
+        width: 50px; height: 50px;
+        background-image: url("https://i.imgur.com/MgAUlCW.png");
+        animation-name: starDOS;
+        animation-duration: 7s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+            transition: .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+    }
+
+    .star-3 {
+        position: absolute;
+        margin-left: 550px; margin-top: 90px;
+        opacity: 0.6;
+        width: 50px; height: 50px;
+        background-image: url("https://i.imgur.com/kbeHA5N.png");
+        animation-name: starUNO;
+        animation-duration: 7s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+            transition: .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+    }
+
+    .star-4 {
+        position: absolute;
+        margin-left: 640px; margin-top: 30px;
+        opacity: 0.6;
+        width: 50px; height: 50px;
+        background-image: url("https://i.imgur.com/lpBwWUt.png");
+        animation-name: starDOS;
+        animation-duration: 7s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+            transition: .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+    }
+
+    .star-5 {
+        position: absolute;
+        margin-left: 640px; margin-top: 440px;
+        opacity: 0.6;
+        width: 42px; height: 50px;
+        background-image: url("https://i.imgur.com/O6QLmpY.png");
+        animation-name: starUNO;
+        animation-duration: 7s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+            transition: .3s linear;
+            -moz-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+    }
+
+</style>
+
+<!-- If you want to add any tooltips to anything, do the following...
+<div class="tooltip">HOVERABLE WORD/IMAGE HERE
+    <div class="tooltip-content">
+        TOOLTIP TEXT HERE
+    </div>
+</div>
+-->
+
+<div class="background"><div class="bg-texture"></div></div>
+<div class="middle-bar"></div>
+
+<div class="main-container">
+    <div class="first-container">
+        <div class="stats-box">
+            <!--Add/Remove as many lines as you want.-->
+            <h1> Information ⸻ </h1>
+            <i>Name - </i> Steven Khuu <br>
+            <i>Age - </i> -- <br>
+            <i>Height - </i> -- <br>
+            <i>Stat - </i> Info <br>
+            <i>Stat - </i> <a href="https://google.com" target="_blank">
+                <div class="tooltip">Google
+                    <div class="tooltip-content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto odio iste, adipisci aperiam, sint sit mollitia iure, pariatur quisquam eaque voluptas esse soluta odit distinctio quod unde magni ut tempore.
+                    </div>
+                </div></a> <br>
+            <i>Stat - </i> Info <br>
+            <i>Stat - </i> Info <br>
+            <i>Stat - </i> Info <br>
+            <i>Stat - </i> Info <br>
+            <i>Stat - </i> Info <br>
+            <br>
+            <center>Normal<i>Italics</i><b>Bold</b><u>Underline</u><strike>Strike</strike></center> <!--Delete this after you're done.-->
+        </div>
+
+        <div class="ooc-container">
+            <!--Add/Remove as many lines as you want.-->
+            <div class="ooc-line"><u>01.</u> INFO</div>
+            <div class="ooc-line"><u>02.</u> INFO</div>
+            <div class="ooc-line"><u>03.</u> INFO</div>
+            <div class="ooc-line"><u>04.</u> INFO</div>
+            <div class="ooc-line"><u>05.</u> INFO</div>
+            <div class="ooc-line"><u>06.</u> INFO</div>
+            <div class="ooc-line"><u>07.</u> INFO</div>
+        </div>
+
+        <div class="star-1"></div>
+        <div class="star-2"></div>
+        <div class="star-3"></div>
+    </div>
+
+    <div class="second-container">
+        <div class="story-box">
+            <h1> Background ⸻ </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem natus minus eum suscipit odio saepe sunt delectus, exercitationem magni vero dolores? Voluptatum nihil dolore quam, consectetur quasi iusto non similique?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nisi et doloribus! Praesentium, repudiandae asperiores ratione quam cupiditate, totam dolorum minus atque nobis ipsa numquam molestiae a dolorem debitis tenetur.
+            </p>
+        </div>
+
+        <div class="abilities-box">
+            <h1> Skills ⸻ </h1>
+            <u>Skill</u> - Description <br>
+            <u>Skill</u> - Description <br>
+            <u>Skill</u> - Description <br>
+            <u>Skill</u> - Description <br>
+        </div>
+
+        <div class="star-4"></div>
+        <div class="star-5"></div>
+    </div>
+</div>
+
+<div class="scroll-1"></div>
+<div class="scroll-symbol">↼ scroll ⇁</div>
+<div class="scroll-2"></div>
+
+<!-- To prevent source code viewing. -->
+<script type="text/javascript">
+    window.onload = function() {
+        document.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+        }, false);
+        document.addEventListener("keydown", function(e) {
+        //document.onkeydown = function(e) {
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+            disabledEvent(e);
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            disabledEvent(e);
+        }
+        if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+            disabledEvent(e);
+        }
+        if (e.ctrlKey && e.keyCode == 85) {
+            disabledEvent(e);
+        }
+        if (event.keyCode == 123) {
+            disabledEvent(e);
+        }
+        }, false);
+        function disabledEvent(e){
+        if (e.stopPropagation){
+            e.stopPropagation();
+        } else if (window.event){
+            window.event.cancelBubble = true;
+        }
+        e.preventDefault();
+        return false;
+        }
+    };
+</script>

@@ -1,0 +1,503 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Khula&family=Ysabeau+Office&display=swap');
+
+/*
+font-family: 'Khula', sans-serif;
+font-family: 'Ysabeau Office', sans-serif;
+*/
+
+body {
+  background: linear-gradient(to bottom, #000000 -36%, #71696a 46%);
+  cursor: url('https://i.imgur.com/NjCacYP.png'), auto !important;
+  user-select: none;
+  font-family: 'Ysabeau Office', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: justify;
+}
+
+::-webkit-scrollbar { width: 1px; }
+::-webkit-scrollbar-thumb:vertical { border: 0px solid white;; background-color: #ffffff; height: 2px; }
+
+h1 {
+  font-family: 'Khula', sans-serif;
+  font-size: 18px;
+  font-variant: small-caps;
+  margin: 0px;
+  text-align: right;
+}
+
+h2 {
+  font-family: 'Khula', sans-serif;
+  font-size: 15px;
+  font-variant: small-caps;
+  margin: 0px;
+  text-align: left;
+  border-bottom: 1px solid white;
+  line-height: 6px;
+}
+
+h3 {
+  font-family: 'Khula', sans-serif;
+  font-size: 15px;
+  font-variant: small-caps;
+  margin: 0px;
+  text-align: center;
+}
+
+p { text-indent: 15px; margin-bottom: -10px; }
+b { font-size: 22px; }
+
+a {
+  cursor: url('https://i.imgur.com/NjCacYP.png'), auto !important;
+  color: #e1c94f;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #50461d;
+  transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+/*--- TOOLTIPS ---*/
+
+.tooltip {
+  position: fixed;
+  display: block;
+  width: 175px; height: fit-content;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 8px 10px #000;
+  transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+  .information:hover .tooltip {
+    opacity: 1;
+    display: block;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+  }
+
+.swordDot {
+  position: fixed; margin: auto;
+  top: -300; left: -800; right: 0; bottom: 0;
+  display: block;
+  width: 18px; height: 22px;
+  padding-left: 5px; padding-right: 5px;
+  padding-top: 2px; padding-bottom: 6px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 800;
+  border-radius: 50px;
+}
+
+.axeDot {
+  position: fixed; margin: auto;
+  top: -150; left: -880; right: 0; bottom: 0;
+  display: block;
+  width: 18px; height: 22px;
+  padding-left: 5px; padding-right: 5px;
+  padding-top: 2px; padding-bottom: 6px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 800;
+  border-radius: 50px;
+}
+
+/*--- MAIN PAGE ---*/
+
+.box {
+  position: fixed; margin: auto;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 850px; height: 550px;
+  box-shadow: 10px 10px 15px #000;
+}
+
+.render {
+  position: fixed; margin: auto;
+  top: -50; left: -335; right: 0; bottom: 0;
+  background-image: url("https://i.imgur.com/1RP6RFF.png");
+  width: 522px; height: 600px;
+}
+
+  .renderShadow {
+    position: fixed; margin: auto;
+    top: -50; left: -320; right: 0; bottom: 0;
+    background-image: url("https://i.imgur.com/4qLu0Ml.png");
+    width: 522px; height: 600px;
+    filter: blur(5px);
+  }
+
+.container {
+  float: right;
+  width: 300px; height: 530px;
+  padding: 10px;
+}
+
+  .dossier {
+    float: right;
+    width: 300px; height: fit-content;
+    padding: 10px;
+  }
+
+    .dText {
+      float: left;
+      width: fit-content; height: 18px;
+      padding-left: 5px; padding-right: 5px;
+      padding-top: 1px; padding-bottom: 5px;
+      text-align: center;
+      border: 1px solid #ffffff;
+      box-shadow: 2px 2px 10px #000;
+      margin: 5px;
+      transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+    }
+
+    .dText:hover {
+      background-color: #000000bd;
+      transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+    }
+
+  .story {
+    float: right;
+    width: 300px; height: 340px;
+    padding: 10px;
+    overflow: auto;
+    line-height: 18px;
+  }
+
+.ooc {
+  position: fixed; margin: auto;
+  top: 0; left: 0; right: 0; bottom: -585;
+  width: 870px; height: 20px;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.galleryContainer {
+  position: fixed; margin: auto;
+  top: -290; left: 0; right: -880; bottom: 0;
+  width: 70px; height: 250px;
+}
+
+  .galleryImage {
+    float: right;
+    width: 70px; height: 50px;
+    outline: 3px solid #ffffff5b;
+    outline-offset: -8px;
+    border: 1px solid #ffffff88;
+    margin-bottom: 10px;
+    z-index: 99;
+  }
+
+.gTab1 { background-image: url("https://i.imgur.com/hFH2gnK.png"); }
+.gTab2 { background-image: url("https://i.imgur.com/C0vWr7D.png"); }
+.gTab3 { background-image: url("https://i.imgur.com/TJVHE7X.png"); }
+
+/*--- FRIENDS ---*/
+
+.friendBubbleONE {
+  position: fixed; margin: auto;
+  top: -480; left: -200; right: 0; bottom: 0;
+  width: 30px; height: 15px;
+  background-color: #71696a;
+  border-radius: 50px;
+  box-shadow: 5px -5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.friendBubbleTWO {
+  position: fixed; margin: auto;
+  top: -530; left: -150; right: 0; bottom: 0;
+  width: 65px; height: 15px;
+  background-color: #71696a;
+  border-radius: 50px;
+  box-shadow: 5px -5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.friendBubbleTHREE {
+  position: fixed; margin: auto;
+  top: -630; left: 0; right: -320; bottom: 0;
+  width: 500px; height: 45px;
+  padding-left: 20px; padding-right: 20px;
+  padding-top: 10px; padding-bottom: 10px;
+  background-color: #71696a;
+  border-radius: 50px;
+  box-shadow: 5px -5px 5px 0px rgba(0,0,0,0.75);
+}
+
+  .friendBox {
+    float: left;
+    width: 100px; height: 45px;
+    outline: 3px solid #ffffff5b;
+    outline-offset: -8px;
+    box-shadow: 0px 0px 5px #000;
+    border-radius: 10px;
+    border: 1px solid #ffffff88;
+    margin-right: 11px;
+    margin-left: 11px;
+    filter: grayscale(40%);
+    transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+  }
+
+  .friendHearts {
+    float: left;
+    width: 80px; height: 23px;
+    text-align: center;
+    background-color: #00000084;
+    color: #811111;
+    font-size: 20px;
+    opacity: 0;
+    margin-left: -10px;
+    margin-top: 15px;
+    border-radius: 50px;
+    z-index: 99;
+    transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+  }
+
+.friendBox:hover {
+  filter: grayscale(20%);
+  transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.friendBox:hover .friendHearts {
+  opacity: 1;
+  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+#f1 { background-image: url("https://i.imgur.com/ieIkxEH.png"); }
+#fFiller { background-image: url("https://i.imgur.com/wPdLxZz.png"); filter: grayscale(60%); }
+
+/*--- DECORATIONS ---*/
+
+.sword {
+  position: fixed; margin: auto;
+  top: -340; left: -800; right: 0; bottom: 0;
+  background-image: url("https://i.imgur.com/qnbR29W.png");
+  width: 72px; height: 400px;
+}
+
+.axe {
+  position: fixed; margin: auto;
+  top: -105; left: -850; right: 0; bottom: 0;
+  background-image: url("https://i.imgur.com/h1qSQVI.png");
+  width: 88px; height: 250px;
+}
+
+</style>
+
+<div class="box">
+  <div class="container">
+    <div class="dossier">
+      <div class="dText">Liam Ranvir</div>
+      <div class="dText">25 Years Old</div>
+      <div class="dText">6'0"</div>
+      <div class="dText">166 lbs.</div>
+      <div class="dText">Ranger of Grandholm</div>
+      <div class="dText">Human</div>
+      <div class="dText">Pansexual</div>
+      <div class="dText">Solitary</div>
+      <div class="dText">Sword & Axe Mastery</div>
+      <div class="dText">Guerilla Tactics</div>
+    </div>
+
+    <div class="story">
+      <h1> the ascension chronicles </h1>
+      <h2> Prologue </h2>
+      <p>
+        <b>O</b>nce a childhood leader among his merry band of friends, now an outcast thanks to adulthood's harsh realities.
+        A promise to remain together, to stay as a family, amounting to nothing in the eyes of those with depraved greed.
+        Dreams of adventuring became illusions of grandeur, and as a result a once hopeful young man became lost
+        and sent adrift to fend for himself. Years later he finds himself a hired Ranger of his home nation, a farcry from what
+        he originally envisioned for himself, but it's a stable job that keeps his wits and instincts steady, in the hopes that one day
+        he might embark on a true adventure worth writing... one he can chronicle for himself.
+      </p>
+      <br><br>
+      <h2> The Dreamer & The Moon </h2>
+      <br>
+      <center>
+      <a target="_blank" href="">Chapter 1</a> - Chance Encounter (Ongoing)
+      </center>
+    </div>
+  </div>
+</div>
+
+<div class="galleryContainer">
+  <a target="_blank" href="https://i.imgur.com/zoilWPx.png">
+    <div class="galleryImage gTab1"></div>
+  </a>
+
+  <a target="_blank" href="https://i.imgur.com/5u9fHUH.png">
+    <div class="galleryImage gTab2"></div>
+  </a>
+
+  <a target="_blank" href="https://i.imgur.com/y0A3lR6.jpg">
+    <div class="galleryImage gTab3"></div>
+  </a>
+</div>
+
+<div class="renderShadow"></div>
+<div class="render"></div>
+
+<div class="ooc">
+usual rules apply. allergic to ooc bullshit. main & dm friendly. communication is key. medieval-fantasy. shitpost-novella. my code.
+</div>
+
+<div class="sword"></div>
+<div class="axe"></div>
+
+<div class="friendBubbleONE"></div>
+<div class="friendBubbleTWO"></div>
+<div class="friendBubbleTHREE">
+  <a target="_blank" href="https://roleplay.chat/profile.php?user=Kylia">
+    <div id="f1" class="friendBox">
+      <div class="friendHearts">❤♡♡♡♡</div>
+    </div>
+  </a>
+
+  <a target="_blank" href="URL">
+    <div id="fFiller" class="friendBox">
+      <div class="friendHearts">♡♡♡♡♡</div>
+    </div>
+  </a>
+
+  <a target="_blank" href="URL">
+    <div id="fFiller" class="friendBox">
+      <div class="friendHearts">♡♡♡♡♡</div>
+    </div>
+  </a>
+
+  <a target="_blank" href="URL">
+    <div id="fFiller" class="friendBox">
+      <div class="friendHearts">♡♡♡♡♡</div>
+    </div>
+  </a>
+</div>
+
+<div class="swordDot information">?
+  <span class="tooltip">
+    <h3> Ravenswing - Knight's Sword </h3>
+    Lightweight, reliable, and made of the strongest steel available to Liam. The unique scabbard allows for quick unsheathing
+    and sheathing action. Considered a side-arm by most, it serves the purpose of being far less cumbersome to wield as opposed
+    to a longsword, and frees up the other hand for other actions as often preferred.
+  </span>
+</div>
+
+<div class="axeDot information">?
+  <span class="tooltip">
+    <h3> Havoc - Hand Axe </h3>
+    Custom-made for Liam. The broad axe head with unintrusive beard allows for the maneuverability of the hand and wrist with minimal
+    interference, while still retaining the ability to effectively hook onto things (and people). The ring pommel has a leather strap
+    tied to it, which is used essentially as a fulcrum point to land devastating blows. Additionally, it chops wood decently.
+  </span>
+</div>
+
+<script type="text/javascript">
+  window.onload = function() {
+      document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+      }, false);
+      document.addEventListener("keydown", function(e) {
+      //document.onkeydown = function(e) {
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+      disabledEvent(e);
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+      disabledEvent(e);
+      }
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+      disabledEvent(e);
+      }
+      if (e.ctrlKey && e.keyCode == 85) {
+      disabledEvent(e);
+      }
+      if (event.keyCode == 123) {
+      disabledEvent(e);
+      }
+      }, false);
+      function disabledEvent(e){
+      if (e.stopPropagation){
+      e.stopPropagation();
+      } else if (window.event){
+      window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+      }
+  };
+
+  if (document.addEventListener) {
+      document.addEventListener('contextmenu', function(e) {
+          alert("Seriously, bro?"); // MESSAGE HERE
+          e.preventDefault();
+          }, false);
+          } else {
+          document.attachEvent('oncontextmenu', function() {
+          alert("Seriously, bro?"); // MESSAGE HERE
+          window.event.returnValue = false;
+          });
+      }
+
+      var tooltip = document.querySelectorAll('.tooltip');
+
+document.addEventListener('mousemove', fn, false);
+
+function fn(e) {
+    for (var i=tooltip.length; i--;) {
+        tooltip[i].style.left = e.pageX + 'px';
+        tooltip[i].style.top = e.pageY + 'px';
+    }
+}
+
+</script>
